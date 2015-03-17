@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/java"/>
+	<classpathentry kind="lib" path="/home/tom/workspace/jason/lib/jason.jar" sourcepath="/home/tom/workspace/jason/src">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/tom/workspace/jason/doc/api/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry combineaccessrules="false" kind="src" path="/jasdl-owlapi"/>
+	<classpathentry kind="lib" path="/jasdl-owlapi/lib/owlapi-bin.jar" sourcepath="/home/tom/workspace/owlapi/antbuild/build/owlapi-src.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/home/tom/workspace/owlapi/antbuild/build/javadoc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/jasdl-owlapi/lib/pellet/pellet.jar" sourcepath="/home/tom/workspace/pellet/src"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/owl2mas"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>

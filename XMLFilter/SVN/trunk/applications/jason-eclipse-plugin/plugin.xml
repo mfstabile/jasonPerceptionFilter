@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+    
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="net.sourceforge.jasonide.editors.ASLEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            extensions="asl"
+            icon="icons/agent.GIF"
+            id="net.sourceforge.jasonide.editors.ASLEditor"
+            name="ASL Editor"/>
+      <editor
+            class="net.sourceforge.jasonide.editors.MAS2JEditor"
+            contributorClass="net.sourceforge.jasonide.editors.MAS2JEditorContributor"
+            extensions="mas2j"
+            icon="icons/newProject.gif"
+            id="net.sourceforge.jasonide.editors.MAS2JEditor"
+            name="MAS2J Editor"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="org.home.jasonide.contribution1"
+            nameFilter="*"
+            objectClass="org.eclipse.core.resources.IProject">
+      </objectContribution>
+   </extension>
+   
+   <extension
+         id="xmlProblem"
+         name="XML Problem"
+         point="org.eclipse.core.resources.markers">
+      <super type="org.eclipse.core.resources.problemmarker"/>
+      <persistent value="true"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="net.sourceforge.jasonide.menus"
+            name="Jason Plugin"/>
+      <wizard
+            category="net.sourceforge.jasonide.menus"
+            class="net.sourceforge.jasonide.wizards.NewJasonProjectWizard"
+            hasPages="true"
+            icon="icons/jason.jpg"
+            id="net.sourceforge.jasonide.wizards.NewJasonProjectWizard"
+            name="Jason Project"
+            project="true"/>
+      <wizard
+            category="net.sourceforge.jasonide.menus"
+            class="net.sourceforge.jasonide.wizards.NewAgentWizard"
+            hasPages="true"
+            icon="icons/agent.GIF"
+            id="net.sourceforge.jasonide.wizards.NewAgentWizard"
+            name="Agent"
+            project="false"/>
+      <wizard
+            category="net.sourceforge.jasonide.menus"
+            class="net.sourceforge.jasonide.wizards.NewInternalActionWizard"
+            hasPages="true"
+            icon="icons/createIA.gif"
+            id="net.sourceforge.jasonide.wizards.NewInternalActionWizard"
+            name="Internal Action"
+            project="false"/>
+      <wizard
+            category="net.sourceforge.jasonide.menus"
+            class="net.sourceforge.jasonide.wizards.NewEnvironmentWizard"
+            hasPages="true"
+            icon="icons/createEnv.gif"
+            id="net.sourceforge.jasonide.wizards.NewEnvironmentWizard"
+            name="Environment"
+            project="false"/>
+      <wizard
+            category="net.sourceforge.jasonide.menus"
+            class="net.sourceforge.jasonide.wizards.NewLogConfigurationWizard"
+            hasPages="true"
+            icon="icons/list.gif"
+            id="net.sourceforge.jasonide.wizards.NewLogConfigurationWizard"
+            name="Log Configuration"
+            project="false"/>
+   </extension>
+
+    <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            name="Jason Plugin"
+            class="net.sourceforge.jasonide.editors.cbg.prefs.ColoringPreferencePage"
+            id="net.sourceforge.jasonide.editors.cbg.prefs.ColoringPreferencePage">
+      </page>
+      <page
+            name="Colors"
+            category="net.sourceforge.jasonide.editors.cbg.prefs.ColoringPreferencePage"
+            class="net.sourceforge.jasonide.editors.cbg.prefs.ColorsPreferencePage"
+            id="net.sourceforge.jasonide.editors.cbg.prefs.ColorsPreferencePage">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer class="net.sourceforge.jasonide.editors.cbg.prefs.PreferenceInitializer"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="jasonide.objectContribution1"
+            nameFilter="*.mas2j"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               class="net.sourceforge.jasonide.popup.actions.RunJason"
+               definitionId="run"
+               icon="icons/execute.gif"
+               id="jasonide.popup.actions.NewAction"
+               label="Run in Jason"
+               menubarPath="additions"/>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="net.sourceforge.jasonide.objectContribution1"
+            nameFilter="*.mas2j"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               class="net.sourceforge.jasonide.popup.actions.RunJason"
+               definitionId="debug"
+               icon="icons/debug.gif"
+               id="net.sourceforge.jasonide.action1"
+               label="Debug In Jason"
+               menubarPath="additions"/>
+      </objectContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.importWizards">
+      <category
+            id="net.sourceforge.jasonide.importWizards"
+            name="Jason"/>
+      <wizard
+            category="net.sourceforge.jasonide.importWizards"
+            class="net.sourceforge.jasonide.importWizards.JasonProjectImportWizard"
+            icon="icons/jason.jpg"
+            id="net.sourceforge.jasonide.importWizards.JasonProjectImportWizard"
+            name="Import Jason Project">
+         <description>
+            Import a file from the local file system into the workspace.
+         </description>
+      </wizard>
+   </extension>
+
+</plugin>

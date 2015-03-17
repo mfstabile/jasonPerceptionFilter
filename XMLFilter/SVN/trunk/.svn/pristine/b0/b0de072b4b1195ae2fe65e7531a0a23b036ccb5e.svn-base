@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/jasonide.xtext.asl/src-gen"
+    editDirectory="/jasonide.xtext.asl.edit/src" editorDirectory="/jasonide.xtext.asl.editor/src"
+    modelPluginID="jasonide.xtext.asl" forceOverwrite="true" modelName="Asl" updateClasspath="false"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" complianceLevel="5.0"
+    copyrightFields="false" editPluginID="jasonide.xtext.asl.edit" editorPluginID="jasonide.xtext.asl.editor">
+  <genPackages prefix="Asl" basePackage="jasonide.xtext.asl" disposableProviderFactory="true"
+      ecorePackage="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#/">
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Agent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Agent/directive"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Agent/belief"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Agent/initial_goal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Agent/plan"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Directive">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Directive/tk_begin"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Directive/pred"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Directive/agent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Directive/pred2"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Belief">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Belief/literal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Belief/log_expr"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Initial_goal">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Initial_goal/literal"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan/tk_label_at"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan/pred"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan/trigger"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan/log_expr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan/plan_body"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Trigger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Trigger/trigger"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Trigger/literal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Trigger/var"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan_body">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan_body/stmtIF"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan_body/stmtFOR"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan_body/stmtWHILE"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan_body/body_formula"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan_body/plan_body"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//StmtIF">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//StmtIF/tk_if"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//StmtIF/log_expr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//StmtIF/plan_term"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//StmtIF/tk_else"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//StmtIF/plan_term2"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//StmtFOR">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//StmtFOR/tk_for"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//StmtFOR/log_expr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//StmtFOR/plan_term"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//StmtWHILE">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//StmtWHILE/tk_while"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//StmtWHILE/log_expr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//StmtWHILE/plan_term"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Body_formula">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Body_formula/log_expr"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan_term">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan_term/tk_label_at"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan_term/pred"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan_term/trigger"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan_term/log_expr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan_term/plan_body"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Literal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Literal/tk_neg"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Literal/pred"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Literal/tk_true"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Literal/tk_false"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Pred">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Pred/atom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Pred/tk_begin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Pred/tk_end"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Pred/terms"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Pred/plan_term"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Pred/list"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Terms">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Terms/term"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Term">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Term/list"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Term/plan_term"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Term/log_expr"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//List">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//List/term_in_list"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//List/var"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//List/unnamedvar"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//List/list"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Term_in_list">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Term_in_list/list"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Term_in_list/arithm_expr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Term_in_list/string"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Term_in_list/plan_term"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Log_expr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Log_expr/log_expr_trm"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Log_expr/log_expr"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Log_expr_trm">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Log_expr_trm/log_expr_factor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Log_expr_trm/log_expr_trm"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Log_expr_factor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Log_expr_factor/tk_not"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Log_expr_factor/log_expr_factor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Log_expr_factor/rel_expr"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Rel_expr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Rel_expr/arithm_exp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Rel_expr/string"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Rel_expr/relOp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Rel_expr/arithm_expr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Rel_expr/string2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Rel_expr/list"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Rel_expr/plan_term"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr/arithm_expr_trm"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr/subadd"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr/arithm_expr"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr_trm">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr_trm/arithm_expr_factor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr_trm/muldiv"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr_trm/tk_intdiv"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr_trm/tk_intmod"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr_trm/arithm_expr_trm"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr_factor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr_factor/arithm_expr_simple"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr_factor/exponential"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr_factor/arithm_expr_factor"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr_simple">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr_simple/number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr_simple/unary"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr_simple/arithm_expr_simple"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr_simple/log_expr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr_simple/var"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr_simple/function"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Function">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Function/literal"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Var">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Var/var"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Var/unnamedvar"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Var/list"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//String">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//String/string"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Number">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Number/number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Number/decimalPart"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

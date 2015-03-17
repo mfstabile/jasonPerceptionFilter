@@ -1,0 +1,89 @@
+<project basedir="." default="jar" name="jmca">
+
+        <property environment="env"/>
+
+    <property name="version" value="0"/>
+    <property name="release" value="0.1"/>
+    <property name="build.dir" value="${basedir}/bin" />
+    <property name="jar.file" value="${basedir}/lib/jmca.jar" />
+    <property name="dist.dir" value="${env.HOME}/tmp/jmca-${version}.${release}" />
+    <property name="dist.file" value="${env.HOME}/tmp/jmca-${version}.${release}" />
+
+    <path id="project.classpath">
+        <pathelement location="../../lib/jason.jar"/>
+        <pathelement location="../owl2mas/lib/owl2mas.jar"/>
+        <pathelement location="lib/owlapi-bin.jar"/>
+        <pathelement location="lib/pellet.jar"/>
+    </path>
+
+    <target name="init">
+        <tstamp/>
+        <mkdir dir="${build.dir}"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <javac srcdir="src" destdir="${build.dir}" debug="true" deprecation="true" optimize="true" nowarn="true" source="1.5" target="1.5">
+            <classpath refid="project.classpath" />
+        </javac>
+    </target>
+
+    <target name="jar" depends="compile">
+        <jar destfile="${jar.file}" basedir="./bin" includes="**/*.class"/>
+        <ant dir="./applications/elbpp" inheritAll="false"/>
+        <ant dir="./applications/alpha" inheritAll="false"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete file="${jar.file}"/>
+        <ant dir="./applications/elbpp" inheritAll="false" target="clean" />
+        <ant dir="./applications/alpha" inheritAll="false" target="clean" />
+    </target>
+
+    <target name="apidoc" depends="compile" >
+        <javadoc 
+            packagenames="jmca.*"
+            destdir="${basedir}/doc/api"
+            author="true"
+            version="true"
+            use="true"
+            windowtitle="Jason Module Composition Architecture">
+            <classpath refid="project.classpath"/>
+            <sourcepath>
+                <pathelement path="${basedir}/src"/>
+            </sourcepath>
+        </javadoc>    
+    </target>
+
+    <target name="dist" depends="clean, jar, apidoc">
+
+        <echo message="Generating JMCA ${version}.${release}" />
+
+        <fixcrlf srcdir="${basedir}"  eol="crlf" includes="**/*.txt,**/*.bat"  />
+
+        <delete failonerror="no" includeEmptyDirs="true" >
+            <fileset dir="${dist.dir}" />
+        </delete>
+
+        <mkdir dir="${dist.dir}" />
+          
+        <copy todir="${dist.dir}">
+            <fileset dir="${basedir}" includes="build.xml" />
+            <fileset dir="${basedir}" includes="COPYING" />
+            <fileset dir="${basedir}" includes="COPYING.LESSER" />
+            <fileset dir="${basedir}" includes="README" />
+            <fileset dir="${basedir}" includes="doc/api/**/*" />
+            <fileset dir="${basedir}" includes="lib/**/*" />
+            <fileset dir="${basedir}" includes="applications/alpha/*.*"/>
+            <fileset dir="${basedir}" includes="applications/alpha/src/**/*"/>
+            <fileset dir="${basedir}" includes="applications/alpha/lib/**/*"/>
+            <fileset dir="${basedir}" includes="applications/elbpp/*.*"/>
+            <fileset dir="${basedir}" includes="applications/elbpp/src/**/*"/>
+            <fileset dir="${basedir}" includes="applications/elbpp/lib/**/*"/>
+            <fileset dir="${basedir}" includes="examples/trivial/*.*"/>
+            <fileset dir="${basedir}" includes="src/**/*" />
+        </copy>
+
+        <zip basedir="${dist.dir}/.." includes="jmca*/**/*" zipfile="${dist.file}.zip"/>
+    </target>
+</project>

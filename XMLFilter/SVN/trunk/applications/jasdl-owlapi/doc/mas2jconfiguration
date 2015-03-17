@@ -1,0 +1,161 @@
+The following file documents how to configure a Jason agent to make use of JASDL.
+
+
+********************************************************
+--- Necessary settings for standard Jason parameters ---
+
+For each JASDL agent, the following must be set to use JASDL classes (or extensions thereof) as shown. 
+
+	agentArchClass jasdl.architecture.JASDLAgArch
+	agentClass jasdl.asSemantics.JASDLAgent
+	beliefBaseClass jasdl.bb.JASDLBeliefBase;
+
+If your MAS makes use of an environment class, the following must be set to use a JASDL class (or an extension thereof) as shown:
+
+   	environment: jasdl.env.JASDLEnvironment
+
+Additionally, we must ensure all of the libraries JASDL is dependent upon are in the classpath of a JASDL agent.
+This is not an issue if the libraries are under the agent's directory. However, to avoid unneccesary duplication,
+since commerce and travel_agent are nested within the JASDL distribution, we set the classpath for these as follows:
+
+	classpath: 	"../../lib/**/*.jar";
+
+********************************************************
+
+
+********************************************************
+--- Necessary JASDL agent settings ---
+
+For each JASDL agent, the following must be specified in its user parameters.
+
+	jasdl_ontologies = "<o_1>, <o_2> ...., <o_n>"
+
+		Where each <o_n> is an atomic label used to identify the ontology within the "o" annotation in the agent's
+		.asl code.
+
+Additionally, for each <o_n>, we must specify the reachable physical URI of the ontology so it can be loaded, as follows:
+
+	jasdl_<o_n>_uri = "<uri>"
+
+		Where <uri> is a valid URI. Note that this can also be specified relative to the execution path of the agent (i.e. the location
+		of the .mas2j file).
+
+********************************************************
+
+
+********************************************************
+--- Optional JASDL agent settings ---
+
+For each JASDL agent, the following settings may be specified in its user parameters. Note that these configure advanced
+features of JASDL, and will not be necessary in some circumstances.
+	
+	jasdl_<o>_mapping_strategies = "<class_1>, <class_2> ..., <class_n>"
+		
+		Where <o> is some atomic ontology label specified in jasdl_ontologies (see above), and each <class_n>
+		is the fully-qualified class name of an implementation of the jasdl.bridge.mapping.aliasing.MappingStrategy interface.
+		This specifies the automatic mapping strategies that will be applied to the ontological entities
+		contained within <o>. Such a strategy should apply a consistent mapping from the fragment of an entity URI
+		to the atomic functor used to refer to it in the agent's .asl code. For example:
+
+		jasdl_travel_mapping_strategies = "jasdl.bridge.mapping.aliasing.DecapitaliseMappingStrategy",
+		which decapitalises the first letter of any resource whose fragment begins with an upper case letter
+		(in order to make it compatible with AgentSpeak syntax). For instance, this would cause
+		"http://www.owl-ontologies.com/travel.owl#Hotel" to map to the alias "hotel", thus we could refer to
+		this entity with the SE-Literal	hotel(X)[o(travel)].
+
+		Note that if an automatic mapping strategy results in a name clash (two identical aliases), JASDL will
+		assign the offending resource an anonymous label. For example, if we applied the strategy above and we had the
+		resources "http://.../travel.owl#Hotel" and "http://.../travel.hotel" (encountered in that order), the latter
+		would be assigned the alias "anon_alias_<n>", where <n> is an integer guaranteeing the uniqueness of the
+		anonymous label.
+
+		This setting defaults to "jasdl.bridge.mapping.aliasing.DecapitaliseMappingStrategy"
+
+	jasdl_default_mappings_strategies = "<class_1>, <class_2> ..., <class_n>"
+
+		Where each <class_n> is the fully-qualified class name of an implementation of the jasdl.bridge.mapping.aliasing.MappingStrategy interface.
+		This specifies the mapping strategies that will be applied to any ontologies / ontological entities instantiated
+		during the execution of the agent.
+
+		This setting defaults to "jasdl.bridge.mapping.aliasing.DecapitaliseMappingStrategy"
+
+	jasdl_<o>_manual_mappings = "<alias_1>=<fragment_1> ... , <alias_n>=<fragment_n>"
+		
+		Where each alias_n is the desired alias for the entity referred to by the URI fragment <fragment_n> (which identifies a resource
+		in the ontology referred to by <0>, e.g. "Hotel" might refer to "http://.../travel.owl#Hotel"). We might wish to map
+		the alias "hotel" to this resource, which would achieve using the pair "hotel=Hotel".
+		
+		It is predicted that this setting will be of most use when the agent designer is aware of, and wishes to prevent, 
+		a name clash that will result from the automatic mapping strategies specified (thus causing an entity to be assigned an
+		anonymous alias). 
+
+		This setting defaults to ""
+
+	jasdl_reasonerClass = "<class>"
+
+		Where <class> is the fully-qualified class name of an implementation of the org.semanticweb.owl.inference.OWLReasoner 
+		interface, supported by the OWL-API. Currently, JASDL defaults to use Pellet ("org.mindswap.pellet.owlapi.Reasoner").
+		However, there is experimental support for FaCT++ ("uk.ac.manchester.cs.factplusplus.owlapi.Reasoner"), but you advised
+		against its use for now, since JASDL support for it is largely untested and very buggy.
+
+		This setting defaults to "org.mindswap.pellet.owlapi.Reasoner".
+
+The following features are used to enable or support features of JASDL that are currently highly experimental. Moreover,
+they are all computationally expensive to execute and can slow the execution of a JASDL agent significantly.
+As a result, their usage is (for now) discouraged.
+
+	jasdl_useAnnotationGathering = "<boolean>"
+		
+		If set to "true", when quering the belief base for an SE-Literal, the resulting SE-Literal, x, will possess
+		not only the annotations explicitly asserted to belong to it, but also the annotations of all SE-Literals
+		whose corresponding assertion in some way contributes to the entailement of x.
+
+		This setting defaults to "false".
+
+	jasdl_useContraction = "<boolean>"
+	
+		If set to "true", when removing an SE-Literal, x, from the belief base, JASDL will remove not only x itself,
+		but also all SE-Literals whose corresponding assertion in some way contributes to the entailement of x.
+
+		IMPORTANT NOTE: a common problem when contraction is disabled is encountered when attempting to remove an asserted
+		object property using a SE-Literal removal that refers to the inverse of the asserted property. Without
+		contraction, the assertion will not be removed - the object property used in the original assertion must be used. 
+
+		This setting defaults to "false".
+
+	jasdl_useBeliefRevision = "<boolean>"
+	
+		If set to "true", JASDL employs its (experimental) DL-based belief revision mechanism.
+
+		This setting defaults to "false". In which case, JASDL employs its legacy consistency assurance mechanism
+		whereby inconsistent assertions are simply rolled back, giving precedence to earlier ones.
+
+		This setting defaults to "false".
+
+	jasdl_known_agents = "<ag_1>, <ag_2> ..., <ag_n>"
+ 		
+		Where each <ag_n> is the name of an agent we might refer to in the source annotation of an SE-Literal.
+		This, combined with their assigned trust ratings (see below), is currently used (only) by JASDL's
+		experimental DL-based belief revision and belief base contraction support.
+
+		In these cases, it is used by the "incision function", which determines which supporting assertions to
+		undermine when attempting to contract a belief (removing the belief itself and all assertions leading to its entailement).
+		Assertions associated (by the source annotation) with least-trusted agents 
+		(i.e. those with lowest trust rating - see below) are removed first.
+
+		This setting defaults to "".
+	
+	jasdl_<ag_n>_trustRating = "<float>"
+
+		Where each <ag_n> is the name of an agent we might refer to in the source annotation of an SE-Literal, one for each
+		specified in the known_agents setting (see above) and <float> is a numerical value between 0 and 1. See above for 
+		discussion on how this is used.
+
+		This setting is mandatory for each agent specified by known_agents and so has no default.
+
+********************************************************
+
+	
+
+
+

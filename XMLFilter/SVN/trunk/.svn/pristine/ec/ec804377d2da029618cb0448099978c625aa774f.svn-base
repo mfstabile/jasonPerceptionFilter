@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="jasonide_feature"
+      label="Jasonide_feature"
+      version="1.0.10.qualifier">
+
+   <description url="http://jason.sf.net">
+      Jason is an interpreter for an extended version of AgentSpeak
+First release: December 2003.
+Jason is distributed under LGPL (see file LICENSE in the Jason
+directory).
+For more information, please read doc/index.html in the Jason
+directory.
+Thank you for your interest in Jason!
+   </description>
+
+   <copyright>
+      Copyright (C) 2003  Rafael H. Bordini, Jomi F. Hubner, et al.
+Jason is distributed under LGPL. See file LGPL.txt in the Jason
+directory.
+   </copyright>
+
+   <license url="">
+      Copyright (C) 2003  Rafael H. Bordini, Jomi F. Hubner, et al.
+Jason is distributed under LGPL. See file LGPL.txt in the Jason directory.
+
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+To contact the authors:
+http://www.inf.ufrgs.br/~bordini
+http://www.das.ufsc.br/~jomi
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.xtext" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext.util"/>
+      <import plugin="org.eclipse.xtext.common.types"/>
+      <import plugin="org.eclipse.xtext.xbase.lib"/>
+      <import plugin="org.eclipse.xtext.ui"/>
+      <import plugin="org.eclipse.xtext.ui.shared"/>
+      <import plugin="org.eclipse.xtext.builder"/>
+      <import plugin="org.eclipse.xtext.common.types.ui"/>
+      <import plugin="org.eclipse.xtext.ui.codetemplates.ui"/>
+      <import plugin="org.eclipse.xtext.ui.shared" version="2.0.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext.common.types" version="2.0.1" match="greaterOrEqual"/>
+      <import plugin="org.apache.log4j" version="1.2.15" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.emf.common"/>
+      <import plugin="org.antlr.runtime"/>
+      <import plugin="org.apache.commons.logging"/>
+      <import plugin="org.eclipse.ui.editors" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.ide" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.compare"/>
+      <import plugin="org.eclipse.core.resources" version="3.7.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.runtime" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.navigator" version="3.5.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt.core" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface.text" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.ide" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.editors" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt.ui" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.search" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.console" version="3.5.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.expressions" version="3.4.300" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore" version="2.6.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.filesystem" version="1.3.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.debug.core" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.debug.ui" version="3.7.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="jasonide.xtext.asl"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="jasonide.xtext.asl.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="jasonide.xtext.mas2j"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="jasonide.xtext.mas2j.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="jasonide"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.xtext.logging"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+</feature>

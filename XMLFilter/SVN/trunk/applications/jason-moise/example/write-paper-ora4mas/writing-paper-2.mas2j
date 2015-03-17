@@ -1,0 +1,22 @@
+/* 
+  (Traditional) Writing paper example
+  
+  the platform is ora4mas (based on artifacts)
+  
+  by Jomi (2010)
+*/
+
+MAS wp {
+
+    infrastructure: Centralised
+
+    environment: ora4mas.CartagoOrgEnvironment("ora4mas") // the argument is the workspace used by the agents to deploy organisational artifacts
+
+    agents:
+        bob   agentArchClass ora4mas.CartagoOrgAgent;
+        alice agentArchClass ora4mas.CartagoOrgAgent;
+        carol agentArchClass ora4mas.CartagoOrgAgent;
+
+    classpath: "../../lib/moise.jar";"../../lib/jmoise.jar";"../../lib/c4jason.jar";"../../lib/cartago.jar";
+}
+

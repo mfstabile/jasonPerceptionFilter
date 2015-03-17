@@ -1,0 +1,20 @@
+<map id="G" name="G">
+<area shape="rect" id="node1_0" href="./Term.html" title="jason.asSyntax.Term" alt="" coords="113,131,194,173"/>
+<area shape="rect" id="node1" href="./Term.html" title="&lt;TABLE&gt;" alt="" coords="102,125,205,179"/>
+<area shape="rect" id="node5_1" href="./LogicalFormula.html" title="jason.asSyntax.LogicalFormula" alt="" coords="171,247,274,289"/>
+<area shape="rect" id="node5" href="./LogicalFormula.html" title="&lt;TABLE&gt;" alt="" coords="161,241,285,295"/>
+<area shape="rect" id="node2_2" href="./Rule.html" title="jason.asSyntax.Rule" alt="" coords="19,139,64,165"/>
+<area shape="rect" id="node2" href="./Rule.html" title="&lt;TABLE&gt;" alt="" coords="5,128,77,176"/>
+<area shape="rect" id="node3_3" href="./RelExpr.html" title="jason.asSyntax.RelExpr" alt="" coords="25,355,90,381"/>
+<area shape="rect" id="node3" href="./RelExpr.html" title="&lt;TABLE&gt;" alt="" coords="14,344,101,392"/>
+<area shape="rect" id="node4_4" href="./Plan.html" title="jason.asSyntax.Plan" alt="" coords="243,139,288,165"/>
+<area shape="rect" id="node4" href="./Plan.html" title="&lt;TABLE&gt;" alt="" coords="229,128,301,176"/>
+<area shape="rect" id="node6_5" href="./LogExpr.html" title="jason.asSyntax.LogExpr" alt="" coords="135,355,203,381"/>
+<area shape="rect" id="node6" href="./LogExpr.html" title="&lt;TABLE&gt;" alt="" coords="125,344,214,392"/>
+<area shape="rect" id="node7_6" href="./Literal.html" title="jason.asSyntax.Literal" alt="" coords="249,355,303,381"/>
+<area shape="rect" id="node7" href="./Literal.html" title="&lt;TABLE&gt;" alt="" coords="238,344,314,392"/>
+<area shape="rect" id="node8_7" href="./InternalActionLiteral.html" title="jason.asSyntax.InternalActionLiteral" alt="" coords="349,355,475,381"/>
+<area shape="rect" id="node8" href="./InternalActionLiteral.html" title="&lt;TABLE&gt;" alt="" coords="339,344,485,392"/>
+<area shape="rect" id="node9_8" href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Cloneable.html" title="java.lang.Cloneable" alt="" coords="225,11,306,71"/>
+<area shape="rect" id="node9" href="http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Cloneable.html" title="&lt;TABLE&gt;" alt="" coords="214,5,317,76"/>
+</map>

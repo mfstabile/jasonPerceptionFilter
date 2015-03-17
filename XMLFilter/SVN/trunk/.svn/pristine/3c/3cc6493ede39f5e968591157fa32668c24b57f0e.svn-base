@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: JasonIDE Plug-in
+Bundle-SymbolicName: net.sourceforge.jasonide;singleton:=true
+Bundle-Version: 1.3
+Bundle-Activator: net.sourceforge.jasonide.Activator
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.ui.ide,
+ org.eclipse.jface.text,
+ org.eclipse.ui.editors,
+ org.eclipse.ui.workbench.texteditor,
+ org.eclipse.jdt.ui,
+ org.eclipse.jdt.core,
+ org.eclipse.debug.core,
+ org.eclipse.jdt.launching,
+ org.eclipse.debug.ui
+Eclipse-LazyStart: true
+Bundle-Vendor: net.sourceforge.jason
+Bundle-ClassPath: lib/dom4j-mini.jar,
+ lib/jason.jar,
+ lib/regexp-1.2-mini.jar,
+ .,
+ lib/c4jason.jar,
+ lib/cartago.jar

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="asl"
+    nsURI="http://www.xtext.jasonide/asl/Asl" nsPrefix="asl">
+  <eClassifiers xsi:type="ecore:EClass" name="Agent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="directive" upperBound="-1"
+        eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Directive"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="belief" upperBound="-1"
+        eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Belief"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initial_goal" upperBound="-1"
+        eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Initial_goal"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="plan" upperBound="-1" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Directive">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tk_begin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pred" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Pred"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="agent" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Agent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pred2" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Pred"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Belief">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="literal" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Literal"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="log_expr" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Log_expr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Initial_goal">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="literal" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Literal"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Plan">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tk_label_at" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pred" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Pred"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trigger" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Trigger"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="log_expr" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Log_expr"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="plan_body" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan_body"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Trigger">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="trigger" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="literal" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Literal"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Var"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Plan_body">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stmtIF" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//StmtIF"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stmtFOR" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//StmtFOR"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stmtWHILE" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//StmtWHILE"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body_formula" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Body_formula"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="plan_body" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan_body"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StmtIF">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tk_if" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="log_expr" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Log_expr"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="plan_term" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan_term"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tk_else" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="plan_term2" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan_term"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StmtFOR">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tk_for" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="log_expr" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Log_expr"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="plan_term" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan_term"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StmtWHILE">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tk_while" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="log_expr" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Log_expr"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="plan_term" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan_term"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Body_formula">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="log_expr" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Log_expr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Plan_term">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tk_label_at" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pred" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Pred"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trigger" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Trigger"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="log_expr" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Log_expr"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="plan_body" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan_body"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Literal">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tk_neg" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pred" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Pred"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tk_true" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tk_false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pred">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="atom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tk_begin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tk_end" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="terms" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Terms"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="plan_term" upperBound="-1"
+        eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan_term"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="list" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//List"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Terms">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="term" upperBound="-1" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Term"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Term">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="list" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//List"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="plan_term" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan_term"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="log_expr" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Log_expr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="List">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="term_in_list" upperBound="-1"
+        eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Term_in_list"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="var" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unnamedvar" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="list" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//List"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Term_in_list">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="list" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//List"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arithm_expr" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="string" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//String"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="plan_term" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan_term"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Log_expr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="log_expr_trm" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Log_expr_trm"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="log_expr" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Log_expr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Log_expr_trm">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="log_expr_factor" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Log_expr_factor"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="log_expr_trm" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Log_expr_trm"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Log_expr_factor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tk_not" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="log_expr_factor" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Log_expr_factor"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rel_expr" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Rel_expr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Rel_expr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arithm_exp" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="string" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//String"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="relOp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arithm_expr" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="string2" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//String"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="list" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//List"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="plan_term" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Plan_term"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Arithm_expr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arithm_expr_trm" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr_trm"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subadd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arithm_expr" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Arithm_expr_trm">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arithm_expr_factor" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr_factor"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="muldiv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tk_intdiv" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tk_intmod" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arithm_expr_trm" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr_trm"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Arithm_expr_factor">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arithm_expr_simple" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr_simple"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exponential" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arithm_expr_factor" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr_factor"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Arithm_expr_simple">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="number" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Number"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unary" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arithm_expr_simple" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Arithm_expr_simple"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="log_expr" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Log_expr"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Var"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="function" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Function"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Function">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="literal" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//Literal"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Var">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="var" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unnamedvar" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="list" eType="ecore:EClass platform:/resource/jasonide.xtext.asl/src-gen/jasonide/xtext/asl/Asl.ecore#//List"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="String">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="string" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Number">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="decimalPart" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension id="product" point="org.eclipse.ui.newWizards">
+      <category
+            id="jasonide.newJasonCategory"
+            name="Jason">
+      </category>
+      <wizard
+            canFinishEarly="false"
+            category="jasonide.newJasonCategory"
+            class="jasonide.ui.wizards.NewJasonProjectWizard"
+            finalPerspective="jasonide.jasonPerspective"
+            icon="icons/jason.gif"
+            id="jasonide.newJasonProjectWizard"
+            name="Jason Project"
+            project="true">
+         <description>
+            Create a Jason Project
+         </description>
+      </wizard>
+      <wizard
+            category="jasonide.newJasonCategory"
+            class="jasonide.ui.wizards.NewAgentWizard"
+            hasPages="true"
+            icon="icons/new_agent.gif"
+            id="jasonide.newAgentWizard"
+            name="Agent"
+            project="false">
+         <description>
+            Create a Jason Agent
+         </description>
+      </wizard>
+      <wizard
+            category="jasonide.newJasonCategory"
+            class="jasonide.ui.wizards.NewArtifactWizard"
+            icon="icons/new_artifact.gif"
+            id="jasonide.newArtifactWizard"
+            name="CArtAgO Artifact"
+            project="false">
+         <description>
+            Create a CArtAgO Artifact
+         </description>
+      </wizard>
+      <wizard
+            category="jasonide.newJasonCategory"
+            class="jasonide.ui.wizards.NewInternalActionWizard"
+            icon="icons/new_internalAction.gif"
+            id="jasonide.newInternalActionWizard"
+            name="Internal Action"
+            project="false">
+         <description>
+            Create a Jason Internal Action
+         </description>
+      </wizard>
+      <wizard
+            category="jasonide.newJasonCategory"
+            class="jasonide.ui.wizards.NewAslFileWizard"
+            hasPages="true"
+            icon="icons/new_agent.gif"
+            id="jasonide.newAslFileWizard"
+            name="Asl File"
+            project="false">
+         <description>
+            Create a Jason Asl File
+         </description>
+      </wizard>
+   </extension>
+
+
+   <extension point="org.eclipse.ui.views">
+      <view
+            allowMultiple="false"
+            category="jasonide.jason"
+            class="org.eclipse.ui.navigator.CommonNavigator"
+            icon="icons/jason.gif"
+            id="jasonide.navigatorView"
+            name="Jason Navigator"
+            restorable="true">
+      </view>
+      <category
+            id="jasonide.jason"
+            name="Jason">
+      </category>
+   </extension>
+
+
+   <extension point="org.eclipse.ui.navigator.viewer">
+      <viewer
+            viewerId="jasonide.navigatorView">
+      </viewer>
+      <viewerContentBinding
+            viewerId="jasonide.navigatorView">
+         <includes>
+            <contentExtension
+                  pattern="org.eclipse.ui.navigator.resourceContent">
+            </contentExtension>
+            <contentExtension
+                  pattern="org.eclipse.ui.navigator.resources.filters.*">
+            </contentExtension>
+            <contentExtension
+                  pattern="jasonide.jasonContent">
+            </contentExtension>
+            <contentExtension
+                  pattern="org.eclipse.jdt.java.ui.javaContent">
+            </contentExtension>
+            <contentExtension
+                  pattern="jasonide.hideNonJasonProjectsFilter">
+            </contentExtension>
+            <contentExtension
+                  pattern="org.eclipse.ui.navigator.resources.linkHelper">
+            </contentExtension>
+            <contentExtension
+                  pattern="org.eclipse.ui.navigator.resources.workingSets">
+            </contentExtension>
+            <contentExtension
+                  pattern="org.eclipse.jdt.java.ui.javaLinkHelper">
+            </contentExtension>
+            <contentExtension
+                  pattern="jasonide.hideJreLibraryFilter">
+            </contentExtension>
+            <contentExtension
+                  pattern="jasonide.hideJasonJarsFilter">
+            </contentExtension>
+            <contentExtension
+				pattern="org.eclipse.jdt.java.ui.filters.HideEmptyPackages">
+			</contentExtension>
+			<contentExtension
+					pattern="org.eclipse.jdt.java.ui.filters.HideEmptyInnerPackages">
+			</contentExtension>
+			<contentExtension
+					pattern="org.eclipse.jdt.java.ui.filters.HideAnnotations">
+			</contentExtension>
+			<contentExtension
+					pattern="org.eclipse.jdt.java.ui.filters.HideInterface">
+			</contentExtension>
+			<contentExtension
+					pattern="org.eclipse.jdt.java.ui.filters.HideFields">
+			</contentExtension>
+			<contentExtension
+					pattern="org.eclipse.jdt.java.ui.filters.HideImportDeclaration">
+			</contentExtension>
+			<contentExtension
+					pattern="org.eclipse.jdt.java.ui.filters.HideInnerClassFiles">
+			</contentExtension>
+			<contentExtension
+					pattern="org.eclipse.jdt.java.ui.filters.HideJavaFiles">
+			</contentExtension>
+			<contentExtension
+					pattern="org.eclipse.jdt.java.ui.filters.HideLocalTypes">
+			</contentExtension>
+			<contentExtension
+					pattern="org.eclipse.jdt.java.ui.filters.HideNonJavaElements">
+			</contentExtension>
+			<contentExtension
+					pattern="org.eclipse.jdt.java.ui.filters.HideNonJavaProjects">
+			</contentExtension>
+			<contentExtension
+					pattern="org.eclipse.jdt.java.ui.filters.HideNonPublic">
+			</contentExtension>
+			<contentExtension
+					pattern="org.eclipse.jdt.java.ui.filters.HideNonSharedProjects">
+			</contentExtension>
+			<contentExtension
+					pattern="org.eclipse.jdt.java.ui.filters.HidePackageDeclaration">
+			</contentExtension>
+			<contentExtension
+					pattern="org.eclipse.jdt.java.ui.filters.HideReferencedLibraries">
+			</contentExtension>
+			<contentExtension
+					pattern="org.eclipse.jdt.java.ui.filters.HideStatics">
+			</contentExtension>
+			<contentExtension
+					pattern="org.eclipse.jdt.java.ui.filters.HideSyntheticMembers">
+			</contentExtension></includes>
+      </viewerContentBinding>
+      <viewerActionBinding
+            viewerId="jasonide.navigatorView">
+         <includes>
+            <actionExtension
+                  pattern="org.eclipse.ui.navigator.resources.*">
+            </actionExtension>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+
+
+   <extension point="org.eclipse.ui.navigator.navigatorContent">
+      <navigatorContent
+            activeByDefault="true"
+            contentProvider="jasonide.providers.NavigatorContentProvider"
+            id="jasonide.jasonContent"
+            labelProvider="jasonide.providers.NavigatorLabelProvider"
+            name="Jason Contents"
+            priority="higher">
+         <triggerPoints>
+            <or>
+               <adapt
+                     type="org.eclipse.core.resources.IProject">
+                  <test
+                        property="org.eclipse.core.resources.projectNature"
+                        value="jasonide.jasonNature">
+                  </test>
+               </adapt>
+               <instanceof
+                     value="jasonide.core.WsFolder">
+               </instanceof>
+               <instanceof
+                     value="jasonide.xtext.mas2j.mas2j.Workspace">
+               </instanceof>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+               <instanceof
+                     value="jasonide.core.WsFolder">
+               </instanceof>
+               <instanceof
+                     value="jasonide.xtext.mas2j.mas2j.Workspace">
+               </instanceof>
+            </or></possibleChildren>
+         <commonWizard
+               type="new"
+               wizardId="jasonide.newAgentWizard">
+            <enablement>
+               <adapt
+                     type="org.eclipse.core.runtime.IAdaptable">
+                  <test
+                        property="jasonide.checkFullPath"
+                        value="src/asl">
+                  </test>
+               </adapt>
+            </enablement>
+         </commonWizard>
+         <commonWizard
+               type="new"
+               wizardId="jasonide.newArtifactWizard">
+            <enablement>
+               <adapt
+                     type="org.eclipse.core.runtime.IAdaptable">
+                  <test
+                        property="jasonide.checkCartagoArtifact"
+                        value="src/java">
+                  </test>
+               </adapt></enablement>
+         </commonWizard>
+         <commonWizard
+               type="new"
+               wizardId="jasonide.newInternalActionWizard">
+            <enablement>
+               <adapt
+                     type="org.eclipse.core.runtime.IAdaptable">
+                  <test
+                        property="jasonide.checkFullPath"
+                        value="src/java">
+                  </test>
+               </adapt></enablement>
+         </commonWizard>
+         <commonWizard
+               type="new"
+               wizardId="jasonide.newAslFileWizard">
+            <enablement>
+               <adapt
+                     type="org.eclipse.core.runtime.IAdaptable">
+                  <test
+                        property="jasonide.checkFullPath"
+                        value="src/asl">
+                  </test>
+               </adapt>
+            </enablement>
+         </commonWizard>
+      </navigatorContent>
+      <commonFilter
+            activeByDefault="true"
+            description="Hides all non-Jason projects"
+            id="jasonide.hideNonJasonProjectsFilter"
+            name="Non-Jason projects">
+         <filterExpression>
+            <adapt
+                  type="org.eclipse.core.resources.IProject">
+               <not>
+                  <test
+                        property="org.eclipse.core.resources.projectNature"
+                        value="jasonide.jasonNature">
+                  </test>
+               </not>
+            </adapt></filterExpression>
+      </commonFilter>
+      <commonFilter
+            activeByDefault="true"
+            description="Hides JRE System Library item"
+            id="jasonide.hideJreLibraryFilter"
+            name="JRE System Library">
+         <filterExpression>
+            <instanceof
+                  value="org.eclipse.jdt.internal.ui.packageview.ClassPathContainer">
+            </instanceof>
+         </filterExpression>
+      </commonFilter>
+      <commonFilter
+            activeByDefault="true"
+            class="jasonide.core.HideJasonJarsFilter"
+            description="Hides Jason library jars"
+            id="jasonide.hideJasonJarsFilter"
+            name="Jason Jars">
+      </commonFilter>
+   </extension>
+
+
+   <extension id="jasonide.jasonNature" name="Jason Project Nature" point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="jasonide.nature.JasonNature">
+         </run>
+      </runtime>
+      <builder
+            id="jasonide.jasonBuilder">
+      </builder>
+   </extension>
+
+   <extension id="jasonBuilder" name="Jason Project Builder" point="org.eclipse.core.resources.builders">
+      <builder
+            hasNature="true">
+         <run
+               class="jasonide.nature.JasonBuilder">
+         </run>
+      </builder>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="jasonDebug"
+            nameFilter="*.mas2j"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               class="jasonide.commands.RunJasonFile"
+               definitionId="debug"
+               icon="icons/debug.gif"
+               id="jasonide.popup.actions.NewAction"
+               label="Debug Jason Application"
+               menubarPath="additions"/>
+      </objectContribution>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="jasonRun"
+            nameFilter="*.mas2j"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               class="jasonide.commands.RunJasonFile"
+               definitionId="run"
+               icon="icons/run.gif"
+               id="jasonide.popup.actions.NewAction"
+               label="Run Jason Application"
+               menubarPath="additions"/>
+      </objectContribution>
+   </extension>
+
+	<extension point="org.eclipse.ui.popupMenus"> 
+	   <viewerContribution 
+	      id="jasonDebug"
+	      targetID="jasonide.xtext.mas2j.Mas2j.EditorContext"> 
+	      <action
+	         id="jasonide.popup.actions.NewAction" 
+	         label="Debug Jason Application"
+	         icon="icons/debug.gif"
+	         menubarPath="additions" 
+	         definitionId="debug"
+	         class="jasonide.commands.RunJasonFileEditor"> 
+	      </action> 
+	   </viewerContribution> 
+	</extension>
+   
+	<extension point="org.eclipse.ui.popupMenus"> 
+	   <viewerContribution 
+	      id="jasonRun"
+	      targetID="jasonide.xtext.mas2j.Mas2j.EditorContext"> 
+	      <action
+	         id="jasonide.popup.actions.NewAction" 
+	         label="Run Jason Application"
+	         icon="icons/run.gif"
+	         menubarPath="additions" 
+	         definitionId="run"
+	         class="jasonide.commands.RunJasonFileEditor"> 
+	      </action> 
+	   </viewerContribution> 
+	</extension>
+
+   <extension point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="jasonide.toolbar">
+            <command
+                  commandId="jasonide.runJasonApplication"
+                  icon="icons/run.gif"
+                  id="jasonide.toolbar.runJasonApplication"
+                  style="push">
+               <visibleWhen
+                     checkEnabled="false">
+                  <with
+                        variable="activeWorkbenchWindow.activePerspective">
+                     <equals
+                           value="jasonide.jasonPerspective">
+                     </equals>
+                  </with>
+               </visibleWhen>
+            </command>
+            
+            <command
+                  commandId="jasonide.debugJasonApplication"
+                  icon="icons/debug.gif"
+                  id="jasonide.toolbar.debugJasonApplication"
+                  style="push">
+               <visibleWhen
+                     checkEnabled="false">
+                  <with
+                        variable="activeWorkbenchWindow.activePerspective">
+                     <equals
+                           value="jasonide.jasonPerspective">
+                     </equals>
+                  </with>
+               </visibleWhen>
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="jasonide.commands.RunJasonApplication"
+            id="jasonide.runJasonApplication"
+            name="Run Jason Application">
+      </command>
+      
+      <command
+            defaultHandler="jasonide.commands.RunJasonApplication"
+            id="jasonide.debugJasonApplication"
+            name="Debug Jason Application">
+      </command>
+   </extension>
+   
+   <extension point="org.eclipse.ui.perspectives">
+      <perspective
+            class="jasonide.ui.JasonPerspective"
+            icon="icons/jason.gif"
+            id="jasonide.jasonPerspective"
+            name="Jason">
+      </perspective>
+   </extension>
+
+
+   <extension point="org.eclipse.core.expressions.propertyTesters">
+      <propertyTester
+            class="jasonide.core.JasonPropertyTester"
+            id="jasonide.porpertyTester"
+            namespace="jasonide"
+            properties="checkFullPath"
+            type="org.eclipse.core.runtime.IAdaptable">
+      </propertyTester>
+
+      <propertyTester
+            class="jasonide.core.JasonPropertyTester"
+            id="jasonide.porpertyTester"
+            namespace="jasonide"
+            properties="checkCartagoArtifact"
+            type="org.eclipse.core.runtime.IAdaptable">
+      </propertyTester>
+   </extension>
+
+   <extension point="org.eclipse.ui.importWizards">
+      <category
+            id="jasonide.importJasonCategory"
+            name="Jason">
+      </category>
+      <wizard
+            category="jasonide.importJasonCategory"
+            class="jasonide.ui.wizards.ImportJasonApplicationWizard"
+            icon="icons/jason.gif"
+            id="jasonide.importJasonApplicationWizard"
+            name="Jason Project">
+         <description>
+            Import a Jason project to the workspace
+         </description>
+         <selection class="org.eclipse.core.resources.IResource"/> 
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.exportWizards">
+      <category
+            id="jasonide.exportJasonCategory"
+            name="Jason">
+      </category>
+      <wizard
+            category="jasonide.exportJasonCategory"
+            class="jasonide.ui.wizards.ExportJasonApplicationWizard"
+            icon="icons/jason.gif"
+            id="jasonide.exportJasonApplicationWizard"
+            name="Jason Project">
+         <description>
+            Export a Jason project to local file system
+         </description>
+      </wizard>
+   </extension>
+
+   <extension id="jasonMarker" name="Jason Marker" point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.core.resources.problemmarker">
+      </super>
+      <persistent
+            value="true">
+      </persistent>
+   </extension>
+   
+   <requires>
+      <import plugin="org.eclipse.xtext"/>
+   </requires>
+</plugin>

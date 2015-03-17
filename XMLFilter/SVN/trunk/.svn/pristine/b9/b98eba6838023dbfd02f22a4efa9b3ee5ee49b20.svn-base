@@ -1,0 +1,40 @@
+/* 
+
+Elevator with Jason 
+
+The environment of this project was developed by W.Pasman
+using the EIS standard (http://cig.in.tu-clausthal.de/eis).
+The documentation for this environment is available at
+ElevatorEnvironment.pdf file.
+
+*/
+
+MAS elevator {
+
+    infrastructure: Centralised
+
+    environment: jason.eis.EISAdapter(
+                         "lib/elevatorenv.jar",      // EIS environment
+                         agent_entity(ag1,car0),     // entities, agent ag is responsible for elevator1
+                         agent_entity(ag2,car1),  
+                         agent_entity(ag3,car2),  
+						 map("Simulation","Random Rider Insertion"),
+ 						 map("Floors",10), 
+						 map("Cars",3),
+						 map("RandomSeed",635359), 
+						 map("Capacity",8), 
+						 map("People",20), 
+					     map("InsertionTime",50000), 
+					     map("TimeFactor",0), 
+						 map("Controller","EIS Controller"),
+						 map("InsertionTimeHr","0.3"), 
+					     map("StandardDev",1),
+					     map("NPeoplePerFloor",8), 
+					     map("Insert2ndReqAt", 29000)
+			     )  
+    
+    agents:
+        ag #3;
+
+}
+

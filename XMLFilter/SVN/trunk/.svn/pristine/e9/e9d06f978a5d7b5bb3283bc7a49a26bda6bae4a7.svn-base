@@ -1,0 +1,57 @@
+JASDL: "Jason AgentSpeak-Description Logic"
+Copyright (C) 2008 Thomas Klapiscak (t.g.klapiscak@durham.ac.uk)
+JASDL is distributed under the LGPL license (see COPYING and COPYING.LESSER)
+
+Thank you for downloading this pre-release of JASDL.
+
+My apologies that the documentation is somewhat lacking for this release - this will be addressed soon. For now, the AgentSpeak code for the commerce example is richly commented and so should give you an idea of what is going on. For documentation of the additional internal actions that JASDL provides please consult the jasdl.ia.* package javadocs.
+
+PLEASE NOTE: Your .jason/user.properties file must contain the jasonJar property pointing to a Jason .jar built using source from the Jason SVN revision 1240 or later. Please consult Jason documentation for instructions how to do this.
+
+JASDL requires JDK version 5 or later to compile and run.
+
+If you have any questions, please don't hesitate to email and I'd be glad to help.
+
+********************************************************
+
+--- Directory Structure ---
+
+The JASDL distribution is structured as such:
+
+	src/			- JASDL source code
+
+	bin/			- Compilation target for JASDL classes
+
+	lib/			- Libraries that JASDL and applications developed using it are dependent upon
+
+	docs/
+		mas2jconfig 	- Instructions on configuration of a JASDL agent
+		java		- Javadocs for JASDL
+
+	examples/		- Examples of applications developed using JASDL
+
+		commerce/	- An example JASDL application simulating an "e-commerce" scenario. Please consult commerce/README for more information
+
+
+
+********************************************************
+
+--- Compiling JASDL ---
+
+To compile JASDL run ant on its base directory (the directory this file is in).
+
+********************************************************
+
+--- Running JASDL ---
+
+A Jason agent developed using JASDL can be run like any other. Please consult docs/mas2jconfig for instructions on how to setup the .mas2j file of a JASDL agent and examples/commerce/commerce.mas2j for an example.
+
+********************************************************
+
+--- Known issues ---
+
+Any test queries (and hence ask messages) that might result in the trigger generalisation mechanism being employed will need to include the "jasdl_tg_cause(_)" annotation (the parameter will not be unified and so is best left anonymous for clarity). If future work deems this issue unavoidable, JASDL will make a pass through the plan library and add this annotation automatically where required so the developer need not worry about it.
+
+*******************************************************
+
+Finally, thank you for your interest in JASDL! I look forward to hearing your feedback.

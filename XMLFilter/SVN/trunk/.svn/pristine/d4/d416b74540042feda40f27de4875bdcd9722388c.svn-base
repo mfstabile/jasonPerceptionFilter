@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xtext:Grammar xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:xtext="http://www.eclipse.org/2008/Xtext" name="jasonide.xtext.mas2j.Mas2j" definesHiddenTokens="true" hiddenTokens="//@rules.40 //@rules.42 //@rules.41">
+  <metamodelDeclarations xsi:type="xtext:GeneratedMetamodel" name="mas2j">
+    <ePackage href="http://www.xtext.jasonide/mas2j/Mas2j#/"/>
+  </metamodelDeclarations>
+  <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="ecore">
+    <ePackage href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+  </metamodelDeclarations>
+  <rules xsi:type="xtext:ParserRule" name="Mas2jModel">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//Mas2jModel"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="MAS"/>
+      <elements xsi:type="xtext:Assignment" feature="name" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.31"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="{"/>
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="infrastructure" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="environment" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.3"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="control" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.4"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="agents" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.14"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="directives" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.12"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="classpath" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.5"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="sourcepath" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.7"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="}"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="FQN">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.30"/>
+      <elements xsi:type="xtext:Group" cardinality="*">
+        <elements xsi:type="xtext:Keyword" value="."/>
+        <elements xsi:type="xtext:RuleCall" rule="//@rules.30"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Infrastructure">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//Infrastructure"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="infrastructure"/>
+      <elements xsi:type="xtext:Keyword" value=":"/>
+      <elements xsi:type="xtext:Assignment" feature="infrastructure" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.11"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Environment">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//Environment"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="environment"/>
+      <elements xsi:type="xtext:Keyword" value=":"/>
+      <elements xsi:type="xtext:Assignment" feature="environment" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.11"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Keyword" value="at"/>
+        <elements xsi:type="xtext:Assignment" feature="environmentLocus" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.35"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Control">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//Control"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="executionControl"/>
+      <elements xsi:type="xtext:Keyword" value=":"/>
+      <elements xsi:type="xtext:Assignment" feature="control" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.11"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Keyword" value="at"/>
+        <elements xsi:type="xtext:Assignment" feature="controlLocus" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.35"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Classpaths">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//Classpaths"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="classpath"/>
+      <elements xsi:type="xtext:Keyword" value=":"/>
+      <elements xsi:type="xtext:Assignment" cardinality="+" feature="classpath" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.6"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Classpath">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//Classpath"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="nomeclasspath" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.35"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=";"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Sourcepaths">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//Sourcepaths"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="aslSourcePath"/>
+      <elements xsi:type="xtext:Keyword" value=":"/>
+      <elements xsi:type="xtext:Assignment" cardinality="+" feature="sourcepath" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.8"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Sourcepath">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//Sourcepath"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="nomesourcepath" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.35"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=";"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ParameterClsDef">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//ParameterClsDef"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.11"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.10"/>
+      <elements xsi:type="xtext:Assignment" feature="parameterclsint" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.36"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="parameterclsstr" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.35"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="LstParametersClsDef">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//LstParametersClsDef"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="["/>
+      <elements xsi:type="xtext:Assignment" feature="parameter" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.9"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="*">
+        <elements xsi:type="xtext:Keyword" value=","/>
+        <elements xsi:type="xtext:Assignment" feature="parameter" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.9"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="]"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ClsDef">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//ClsDef"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="infrastructure" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.1"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Keyword" value="("/>
+        <elements xsi:type="xtext:Assignment" feature="parameter" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.9"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="*">
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="parameter" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.9"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=")"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Directives">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//Directives"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="directives"/>
+      <elements xsi:type="xtext:Keyword" value=":"/>
+      <elements xsi:type="xtext:Assignment" cardinality="+" feature="directives" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.13"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Directive">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//Directive"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="directive" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.31"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="="/>
+      <elements xsi:type="xtext:Assignment" feature="clsDirective" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.11"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=";"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Agents">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//Agents"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="agents"/>
+      <elements xsi:type="xtext:Keyword" value=":"/>
+      <elements xsi:type="xtext:Assignment" cardinality="+" feature="agents" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.15"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Agent">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//Agent"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="name" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.31"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="sourceFile" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.16"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="options" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.19"/>
+      </elements>
+      <elements xsi:type="xtext:Alternatives" cardinality="*">
+        <elements xsi:type="xtext:Assignment" feature="agentArchClass" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.26"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="beliefBaseClass" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.27"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="agentClass" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.28"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="instances" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.29"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="environment" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.18"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=";"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="FileName">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//FileName"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="path" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.17"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="asid" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.31"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Keyword" value="."/>
+        <elements xsi:type="xtext:Assignment" feature="asid" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.31"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="PATH">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:RuleCall" rule="//@rules.35"/>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="EnvironmentLocus">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//EnvironmentLocus"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="at"/>
+      <elements xsi:type="xtext:Assignment" feature="environmentLocus" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.35"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Options">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//Options"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="["/>
+      <elements xsi:type="xtext:Assignment" feature="options" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.20"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="*">
+        <elements xsi:type="xtext:Keyword" value=","/>
+        <elements xsi:type="xtext:Assignment" feature="options" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.20"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="]"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Option">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//Option"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.21"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.22"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.23"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.24"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Events">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//Events"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="events"/>
+      <elements xsi:type="xtext:Keyword" value="="/>
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Action">
+            <type metamodel="//@metamodelDeclarations.0">
+              <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//DiscardEvents"/>
+            </type>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="discard"/>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Action">
+            <type metamodel="//@metamodelDeclarations.0">
+              <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//RequeueEvents"/>
+            </type>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="requeue"/>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Action">
+            <type metamodel="//@metamodelDeclarations.0">
+              <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//RetrieveEvents"/>
+            </type>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="retrieve"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="IntBels">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//IntBels"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="intBels"/>
+      <elements xsi:type="xtext:Keyword" value="="/>
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Action">
+            <type metamodel="//@metamodelDeclarations.0">
+              <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//SameFocus"/>
+            </type>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="sameFocus"/>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Action">
+            <type metamodel="//@metamodelDeclarations.0">
+              <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//NewFocus"/>
+            </type>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="newFocus"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Nrcbp">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//Nrcbp"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="nrcbp"/>
+      <elements xsi:type="xtext:Keyword" value="="/>
+      <elements xsi:type="xtext:Assignment" feature="val" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.36"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Verbose">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//Verbose"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="verbose"/>
+      <elements xsi:type="xtext:Keyword" value="="/>
+      <elements xsi:type="xtext:Assignment" feature="val" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.36"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="OtherOption">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//OtherOption"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="optionName" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.30"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="="/>
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Assignment" feature="val" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.30"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="val" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.35"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="int_val" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.36"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="AgentArchClass">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//AgentArchClass"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="agentArchClass"/>
+      <elements xsi:type="xtext:Assignment" feature="agentArchClass" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.11"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="BeliefBaseClass">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//BeliefBaseClass"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="beliefBaseClass"/>
+      <elements xsi:type="xtext:Assignment" feature="beliefBaseClass" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.11"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="AgentClass">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//AgentClass"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="agentClass"/>
+      <elements xsi:type="xtext:Assignment" feature="agentClass" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.11"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Instances">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/mas2j/Mas2j#//Instances"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="#"/>
+      <elements xsi:type="xtext:Assignment" feature="instances" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.36"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="ID">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.31"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.32"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="ID_WITH_STARTING_LCLETTER">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" cardinality="?" value="^"/>
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:RuleCall" rule="//@rules.33"/>
+        <elements xsi:type="xtext:Keyword" value="_"/>
+      </elements>
+      <elements xsi:type="xtext:Alternatives" cardinality="*">
+        <elements xsi:type="xtext:CharacterRange">
+          <left value="a"/>
+          <right value="z"/>
+        </elements>
+        <elements xsi:type="xtext:CharacterRange">
+          <left value="A"/>
+          <right value="Z"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="_"/>
+        <elements xsi:type="xtext:CharacterRange">
+          <left value="0"/>
+          <right value="9"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="ID_WITH_STARTING_UCLETTER">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" cardinality="?" value="^"/>
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:RuleCall" rule="//@rules.34"/>
+        <elements xsi:type="xtext:Keyword" value="_"/>
+      </elements>
+      <elements xsi:type="xtext:Alternatives" cardinality="*">
+        <elements xsi:type="xtext:CharacterRange">
+          <left value="a"/>
+          <right value="z"/>
+        </elements>
+        <elements xsi:type="xtext:CharacterRange">
+          <left value="A"/>
+          <right value="Z"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="_"/>
+        <elements xsi:type="xtext:CharacterRange">
+          <left value="0"/>
+          <right value="9"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="LCLETTER" fragment="true">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:CharacterRange">
+      <left value="a"/>
+      <right value="z"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="UCLETTER" fragment="true">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:CharacterRange">
+      <left value="A"/>
+      <right value="Z"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="STRING">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="&quot;"/>
+      <elements xsi:type="xtext:Alternatives" cardinality="*">
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Keyword" value="\"/>
+          <elements xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="b"/>
+            <elements xsi:type="xtext:Keyword" value="t"/>
+            <elements xsi:type="xtext:Keyword" value="n"/>
+            <elements xsi:type="xtext:Keyword" value="f"/>
+            <elements xsi:type="xtext:Keyword" value="r"/>
+            <elements xsi:type="xtext:Keyword" value="&quot;"/>
+            <elements xsi:type="xtext:Keyword" value="'"/>
+            <elements xsi:type="xtext:Keyword" value="\"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:NegatedToken">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="\"/>
+            <elements xsi:type="xtext:Keyword" value="&quot;"/>
+          </terminal>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="&quot;"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="INT_LITERAL">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </type>
+    <alternatives xsi:type="xtext:RuleCall" rule="//@rules.37"/>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="IntegerNumber" fragment="true">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Keyword" value="0"/>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:CharacterRange">
+          <left value="1"/>
+          <right value="9"/>
+        </elements>
+        <elements xsi:type="xtext:CharacterRange" cardinality="*">
+          <left value="0"/>
+          <right value="9"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="0"/>
+        <elements xsi:type="xtext:CharacterRange" cardinality="+">
+          <left value="0"/>
+          <right value="7"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:RuleCall" rule="//@rules.38"/>
+        <elements xsi:type="xtext:RuleCall" cardinality="+" rule="//@rules.39"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="HexPrefix" fragment="true">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Keyword" value="0x"/>
+      <elements xsi:type="xtext:Keyword" value="0X"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="HexDigit" fragment="true">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:CharacterRange">
+        <left value="0"/>
+        <right value="9"/>
+      </elements>
+      <elements xsi:type="xtext:CharacterRange">
+        <left value="a"/>
+        <right value="f"/>
+      </elements>
+      <elements xsi:type="xtext:CharacterRange">
+        <left value="A"/>
+        <right value="F"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="WS">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives" cardinality="+">
+      <elements xsi:type="xtext:Keyword" value=" "/>
+      <elements xsi:type="xtext:Keyword" value="&#x9;"/>
+      <elements xsi:type="xtext:Keyword" value="&#xD;"/>
+      <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="ML_COMMENT">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="/*"/>
+      <elements xsi:type="xtext:UntilToken">
+        <terminal xsi:type="xtext:Keyword" value="*/"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="SL_COMMENT">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="//"/>
+      <elements xsi:type="xtext:NegatedToken" cardinality="*">
+        <terminal xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+          <elements xsi:type="xtext:Keyword" value="&#xD;"/>
+        </terminal>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Keyword" cardinality="?" value="&#xD;"/>
+        <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+      </elements>
+    </alternatives>
+  </rules>
+</xtext:Grammar>

@@ -1,0 +1,35 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: jasonide.xtext.asl
+Bundle-Vendor: Jason team
+Bundle-Version: 1.0.10
+Bundle-SymbolicName: jasonide.xtext.asl; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;bundle-version="2.0.0";visibility:=reexport,
+ org.apache.log4j;bundle-version="1.2.15";visibility:=reexport,
+ org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional;visibility:=reexport,
+ org.eclipse.xtext.generator;resolution:=optional,
+ org.eclipse.emf.codegen.ecore;resolution:=optional,
+ org.eclipse.emf.mwe.utils;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types
+Import-Package: org.apache.commons.logging,
+ org.apache.log4j,
+ org.eclipse.xtext.xbase.lib
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: jasonide.xtext.asl,
+ jasonide.xtext.asl.services,
+ jasonide.xtext.asl.asl,
+ jasonide.xtext.asl.asl.impl,
+ jasonide.xtext.asl.asl.util,
+ jasonide.xtext.asl.serializer,
+ jasonide.xtext.asl.parser.antlr,
+ jasonide.xtext.asl.parser.antlr.internal,
+ jasonide.xtext.asl.validation,
+ jasonide.xtext.asl.scoping,
+ jasonide.xtext.asl.generator,
+ jasonide.xtext.asl.formatting

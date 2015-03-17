@@ -1,0 +1,992 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xtext:Grammar xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:xtext="http://www.eclipse.org/2008/Xtext" name="jasonide.xtext.asl.Asl" definesHiddenTokens="true" hiddenTokens="//@rules.61 //@rules.62 //@rules.63">
+  <metamodelDeclarations xsi:type="xtext:GeneratedMetamodel" name="asl">
+    <ePackage href="http://www.xtext.jasonide/asl/Asl#/"/>
+  </metamodelDeclarations>
+  <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="ecore">
+    <ePackage href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+  </metamodelDeclarations>
+  <rules xsi:type="xtext:ParserRule" name="Agent">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Agent"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="directive" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.1"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="*">
+        <elements xsi:type="xtext:Assignment" feature="belief" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" cardinality="*" feature="directive" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.1"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="*">
+        <elements xsi:type="xtext:Assignment" feature="initial_goal" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.3"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" cardinality="*" feature="directive" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.1"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="*">
+        <elements xsi:type="xtext:Assignment" feature="plan" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.4"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" cardinality="*" feature="belief" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" cardinality="*" feature="directive" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.1"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Directive">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Directive"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="{"/>
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Assignment" feature="tk_begin" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.39"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="pred" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.14"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="}"/>
+          <elements xsi:type="xtext:Assignment" feature="agent" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.0"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Assignment" feature="pred2" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.14"/>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value="}"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Belief">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Belief"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="literal" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.13"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Keyword" value=":-"/>
+        <elements xsi:type="xtext:Assignment" feature="log_expr" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.19"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="."/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Initial_goal">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Initial_goal"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="!"/>
+      <elements xsi:type="xtext:Assignment" feature="literal" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.13"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="."/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Plan">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Plan"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Assignment" feature="tk_label_at" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.50"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="pred" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.14"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="trigger" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.5"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Keyword" value=":"/>
+        <elements xsi:type="xtext:Assignment" feature="log_expr" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.19"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Keyword" value="&lt;-"/>
+        <elements xsi:type="xtext:Assignment" feature="plan_body" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.7"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="."/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Trigger">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Trigger"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="trigger" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.6"/>
+      </elements>
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Assignment" feature="literal" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.13"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="var" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.33"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="TriggerSymbol">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Keyword" value="+"/>
+        <elements xsi:type="xtext:Keyword" value="-"/>
+        <elements xsi:type="xtext:Keyword" value="^"/>
+      </elements>
+      <elements xsi:type="xtext:Alternatives" cardinality="?">
+        <elements xsi:type="xtext:Keyword" value="!"/>
+        <elements xsi:type="xtext:Keyword" value="?"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Plan_body">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Plan_body"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Assignment" feature="stmtIF" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.8"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="stmtFOR" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.9"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="stmtWHILE" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.10"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="body_formula" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.11"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Keyword" cardinality="?" value=";"/>
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="plan_body" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.7"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="StmtIF">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//StmtIF"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="tk_if" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.41"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="("/>
+      <elements xsi:type="xtext:Assignment" feature="log_expr" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.19"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=")"/>
+      <elements xsi:type="xtext:Assignment" feature="plan_term" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.12"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Assignment" cardinality="?" feature="tk_else" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.42"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="plan_term2" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.12"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="StmtFOR">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//StmtFOR"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="tk_for" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.43"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="("/>
+      <elements xsi:type="xtext:Assignment" feature="log_expr" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.19"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=")"/>
+      <elements xsi:type="xtext:Assignment" feature="plan_term" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.12"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="StmtWHILE">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//StmtWHILE"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="tk_while" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.44"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="("/>
+      <elements xsi:type="xtext:Assignment" feature="log_expr" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.19"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value=")"/>
+      <elements xsi:type="xtext:Assignment" feature="plan_term" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.12"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Body_formula">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Body_formula"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Alternatives" cardinality="?">
+        <elements xsi:type="xtext:Keyword" value="!"/>
+        <elements xsi:type="xtext:Keyword" value="!!"/>
+        <elements xsi:type="xtext:Keyword" value="?"/>
+        <elements xsi:type="xtext:Keyword" value="+"/>
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Keyword" value="-"/>
+          <elements xsi:type="xtext:Keyword" cardinality="?" value="+"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="log_expr" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.19"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Plan_term">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Plan_term"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Action">
+        <type metamodel="//@metamodelDeclarations.0">
+          <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Plan_term"/>
+        </type>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="{"/>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Assignment" feature="tk_label_at" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.50"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="pred" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.14"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="trigger" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.5"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value=":"/>
+          <elements xsi:type="xtext:Assignment" feature="log_expr" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.19"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Alternatives" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="&lt;-"/>
+          <elements xsi:type="xtext:Keyword" value=";"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="plan_body" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.7"/>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="}"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Literal">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Literal"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" cardinality="?" feature="tk_neg" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.51"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="pred" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.14"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="tk_true" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.48"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="tk_false" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.49"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Pred">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Pred"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Assignment" feature="atom" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.36"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="tk_begin" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.39"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="tk_end" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.40"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Keyword" value="("/>
+        <elements xsi:type="xtext:Assignment" feature="terms" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.15"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=")"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="*" feature="plan_term" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.12"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="list" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.17"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Terms">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Terms"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="term" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.16"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="*">
+        <elements xsi:type="xtext:Keyword" value=","/>
+        <elements xsi:type="xtext:Assignment" feature="term" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.16"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Term">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Term"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Assignment" feature="list" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.17"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="plan_term" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.12"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="log_expr" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.19"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="List">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//List"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Action">
+        <type metamodel="//@metamodelDeclarations.0">
+          <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//List"/>
+        </type>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="["/>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Assignment" feature="term_in_list" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.18"/>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="*">
+          <elements xsi:type="xtext:Keyword" value=","/>
+          <elements xsi:type="xtext:Assignment" feature="term_in_list" operator="+=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.18"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="|"/>
+          <elements xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Assignment" feature="var" operator="=">
+              <terminal xsi:type="xtext:RuleCall" rule="//@rules.53"/>
+            </elements>
+            <elements xsi:type="xtext:Assignment" feature="unnamedvar" operator="=">
+              <terminal xsi:type="xtext:RuleCall" rule="//@rules.54"/>
+            </elements>
+            <elements xsi:type="xtext:Assignment" feature="list" operator="=">
+              <terminal xsi:type="xtext:RuleCall" rule="//@rules.17"/>
+            </elements>
+          </elements>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="]"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Term_in_list">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Term_in_list"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Assignment" feature="list" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.17"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="arithm_expr" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.24"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="string" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.34"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="plan_term" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.12"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Log_expr">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Log_expr"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="log_expr_trm" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.20"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Keyword" value="|"/>
+        <elements xsi:type="xtext:Assignment" feature="log_expr" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.19"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Log_expr_trm">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Log_expr_trm"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="log_expr_factor" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.21"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Keyword" value="&amp;"/>
+        <elements xsi:type="xtext:Assignment" feature="log_expr_trm" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.20"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Log_expr_factor">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Log_expr_factor"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="tk_not" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.45"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="log_expr_factor" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.21"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="rel_expr" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.22"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Rel_expr">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Rel_expr"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Assignment" feature="arithm_exp" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.24"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="string" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.34"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Assignment" feature="relOp" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.23"/>
+        </elements>
+        <elements xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Assignment" feature="arithm_expr" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.24"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="string2" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.34"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="list" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.17"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="plan_term" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.12"/>
+          </elements>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="TK_REL_OP" definesHiddenTokens="true">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Keyword" value="&lt;"/>
+      <elements xsi:type="xtext:Keyword" value="&lt;="/>
+      <elements xsi:type="xtext:Keyword" value=">"/>
+      <elements xsi:type="xtext:Keyword" value=">="/>
+      <elements xsi:type="xtext:Keyword" value="=="/>
+      <elements xsi:type="xtext:Keyword" value="\=="/>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="="/>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="."/>
+          <elements xsi:type="xtext:Keyword" value="."/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Arithm_expr">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Arithm_expr"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="arithm_expr_trm" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.26"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Assignment" feature="subadd" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="arithm_expr" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.24"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="TK_SUB_ADD">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Keyword" value="+"/>
+      <elements xsi:type="xtext:Keyword" value="-"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Arithm_expr_trm">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Arithm_expr_trm"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="arithm_expr_factor" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.28"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Assignment" feature="muldiv" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.27"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="tk_intdiv" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.46"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="tk_intmod" operator="=">
+            <terminal xsi:type="xtext:RuleCall" rule="//@rules.47"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="arithm_expr_trm" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.26"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="TK_MUL_DIV">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Keyword" value="*"/>
+      <elements xsi:type="xtext:Keyword" value="/"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Arithm_expr_factor">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Arithm_expr_factor"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="arithm_expr_simple" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.30"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Assignment" feature="exponential" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.29"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="arithm_expr_factor" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.28"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="TK_EXPONENTIAL">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Keyword" value="**"/>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Arithm_expr_simple">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Arithm_expr_simple"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Assignment" feature="number" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.35"/>
+      </elements>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" feature="unary" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.31"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="arithm_expr_simple" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.30"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="("/>
+        <elements xsi:type="xtext:Assignment" feature="log_expr" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.19"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value=")"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="var" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.33"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="function" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.32"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="TK_UNARY_OP">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Keyword" value="-"/>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Function">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Function"/>
+    </type>
+    <alternatives xsi:type="xtext:Assignment" feature="literal" operator="=">
+      <terminal xsi:type="xtext:RuleCall" rule="//@rules.13"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Var">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Var"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Assignment" feature="var" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.53"/>
+        </elements>
+        <elements xsi:type="xtext:Assignment" feature="unnamedvar" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.54"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="list" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.17"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="String">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//String"/>
+    </type>
+    <alternatives xsi:type="xtext:Assignment" feature="string" operator="=">
+      <terminal xsi:type="xtext:RuleCall" rule="//@rules.55"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="Number" definesHiddenTokens="true">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EClass" href="http://www.xtext.jasonide/asl/Asl#//Number"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" cardinality="+" feature="number" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.56"/>
+        </elements>
+        <elements xsi:type="xtext:Keyword" value="."/>
+        <elements xsi:type="xtext:Assignment" cardinality="+" feature="decimalPart" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.56"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="."/>
+        <elements xsi:type="xtext:Assignment" cardinality="+" feature="decimalPart" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.56"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="+" feature="number" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.56"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="JASON_ATOM" definesHiddenTokens="true">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.37"/>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.38"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="JASON_ATOM_HEAD">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" cardinality="?" value="."/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.52"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="JASON_ATOM_TAIL">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="."/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.52"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="TK_BEGIN">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Keyword" value="begin"/>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="TK_END">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Keyword" value="end"/>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="TK_IF">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Keyword" value="if"/>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="TK_ELSE">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Keyword" value="else"/>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="TK_FOR">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Keyword" value="for"/>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="TK_WHILE">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Keyword" value="while"/>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="TK_NOT">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Keyword" value="not"/>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="TK_INTDIV">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Keyword" value="div"/>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="TK_INTMOD">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Keyword" value="mod"/>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="TK_TRUE">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Keyword" value="true"/>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="TK_FALSE">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Keyword" value="false"/>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="TK_LABEL_AT">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Keyword" value="@"/>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="TK_NEG">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Keyword" value="~"/>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="ATOM">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.57"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="VART">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.59"/>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.57"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="UNNAMEDVART">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="_"/>
+      <elements xsi:type="xtext:RuleCall" cardinality="*" rule="//@rules.57"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="STRINGT">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="&quot;"/>
+      <elements xsi:type="xtext:Alternatives" cardinality="*">
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Keyword" value="\"/>
+          <elements xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="b"/>
+            <elements xsi:type="xtext:Keyword" value="t"/>
+            <elements xsi:type="xtext:Keyword" value="n"/>
+            <elements xsi:type="xtext:Keyword" value="f"/>
+            <elements xsi:type="xtext:Keyword" value="r"/>
+            <elements xsi:type="xtext:Keyword" value="&quot;"/>
+            <elements xsi:type="xtext:Keyword" value="'"/>
+            <elements xsi:type="xtext:Keyword" value="\"/>
+          </elements>
+        </elements>
+        <elements xsi:type="xtext:NegatedToken">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="\"/>
+            <elements xsi:type="xtext:Keyword" value="&quot;"/>
+          </terminal>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Keyword" value="&quot;"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="NUMBERT">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:CharacterRange">
+      <left value="0"/>
+      <right value="9"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="CH" fragment="true">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.58"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.59"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.60"/>
+      <elements xsi:type="xtext:Keyword" value="_"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="LCLETTER" fragment="true">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:CharacterRange">
+      <left value="a"/>
+      <right value="z"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="UCLETTER" fragment="true">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:CharacterRange">
+      <left value="A"/>
+      <right value="Z"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="DIGIT" fragment="true">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:CharacterRange">
+      <left value="0"/>
+      <right value="9"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="WS">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives" cardinality="+">
+      <elements xsi:type="xtext:Keyword" value=" "/>
+      <elements xsi:type="xtext:Keyword" value="&#x9;"/>
+      <elements xsi:type="xtext:Keyword" value="&#xD;"/>
+      <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="ML_COMMENT">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="/*"/>
+      <elements xsi:type="xtext:UntilToken">
+        <terminal xsi:type="xtext:Keyword" value="*/"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="SL_COMMENT">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Keyword" value="//"/>
+      <elements xsi:type="xtext:NegatedToken" cardinality="*">
+        <terminal xsi:type="xtext:Alternatives">
+          <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+          <elements xsi:type="xtext:Keyword" value="&#xD;"/>
+        </terminal>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Keyword" cardinality="?" value="&#xD;"/>
+        <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+      </elements>
+    </alternatives>
+  </rules>
+</xtext:Grammar>

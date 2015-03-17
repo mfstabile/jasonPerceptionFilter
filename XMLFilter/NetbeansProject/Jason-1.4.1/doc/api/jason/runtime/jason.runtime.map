@@ -1,0 +1,16 @@
+<map id="G" name="G">
+<area shape="rect" id="node1_0" href="./Settings.html" title="jason.runtime.Settings" alt="" coords="16,19,80,45"/>
+<area shape="rect" id="node1" href="./Settings.html" title="&lt;TABLE&gt;" alt="" coords="5,8,91,56"/>
+<area shape="rect" id="node2_1" href="./RuntimeServicesInfraTier.html" title="jason.runtime.RuntimeServicesInfraTier" alt="" coords="126,11,282,53"/>
+<area shape="rect" id="node2" href="./RuntimeServicesInfraTier.html" title="&lt;TABLE&gt;" alt="" coords="115,5,293,59"/>
+<area shape="rect" id="node3_2" href="./OutputStreamAdapter.html" title="jason.runtime.OutputStreamAdapter" alt="" coords="328,19,472,45"/>
+<area shape="rect" id="node3" href="./OutputStreamAdapter.html" title="&lt;TABLE&gt;" alt="" coords="317,8,483,56"/>
+<area shape="rect" id="node4_3" href="./MASConsoleLogHandler.html" title="jason.runtime.MASConsoleLogHandler" alt="" coords="517,19,677,45"/>
+<area shape="rect" id="node4" href="./MASConsoleLogHandler.html" title="&lt;TABLE&gt;" alt="" coords="507,8,688,56"/>
+<area shape="rect" id="node5_4" href="./MASConsoleLogFormatter.html" title="jason.runtime.MASConsoleLogFormatter" alt="" coords="723,19,891,45"/>
+<area shape="rect" id="node5" href="./MASConsoleLogFormatter.html" title="&lt;TABLE&gt;" alt="" coords="712,8,901,56"/>
+<area shape="rect" id="node6_5" href="./MASConsoleGUI.html" title="jason.runtime.MASConsoleGUI" alt="" coords="937,19,1055,45"/>
+<area shape="rect" id="node6" href="./MASConsoleGUI.html" title="&lt;TABLE&gt;" alt="" coords="926,8,1066,56"/>
+<area shape="rect" id="node7_6" href="./MASConsoleColorGUI.html" title="jason.runtime.MASConsoleColorGUI" alt="" coords="922,118,1070,143"/>
+<area shape="rect" id="node7" href="./MASConsoleColorGUI.html" title="&lt;TABLE&gt;" alt="" coords="911,107,1081,155"/>
+</map>

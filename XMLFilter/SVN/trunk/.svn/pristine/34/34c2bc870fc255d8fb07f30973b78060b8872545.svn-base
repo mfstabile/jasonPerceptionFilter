@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY owl2 "http://www.w3.org/2006/12/owl2#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY mas "http://www.dur.ac.uk/t.g.klapiscak/onts/owl2mas/mas.owl#" >
+    <!ENTITY jmca "http://www.dur.ac.uk/t.g.klapiscak/onts/owl2mas/jmca.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.dur.ac.uk/t.g.klapiscak/onts/owl2mas/jmca.owl#"
+     xml:base="http://www.dur.ac.uk/t.g.klapiscak/onts/owl2mas/jmca.owl"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:mas="http://www.dur.ac.uk/t.g.klapiscak/onts/owl2mas/mas.owl#"
+     xmlns:jmca="http://www.dur.ac.uk/t.g.klapiscak/onts/owl2mas/jmca.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl2="http://www.w3.org/2006/12/owl2#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Ontology rdf:about="">
+        <owl:imports rdf:resource="http://www.dur.ac.uk/t.g.klapiscak/onts/owl2mas/mas.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&mas;PropertyHandler"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dur.ac.uk/t.g.klapiscak/onts/owl2mas/jmca.owl#hasAspect -->
+
+    <owl:ObjectProperty rdf:about="#hasAspect">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="#Aspect"/>
+        <rdfs:domain rdf:resource="#SelectionStrategyClass"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dur.ac.uk/t.g.klapiscak/onts/owl2mas/jmca.owl#hasSelectionStrategyClass -->
+
+    <owl:ObjectProperty rdf:about="#hasSelectionStrategyClass">
+        <rdfs:range rdf:resource="#SelectionStrategyClass"/>
+        <rdfs:domain rdf:resource="#SelectionStrategyClassEntry"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dur.ac.uk/t.g.klapiscak/onts/owl2mas/jmca.owl#hasSelectionStrategyClassEntry -->
+
+    <owl:ObjectProperty rdf:about="#hasSelectionStrategyClassEntry">
+        <mas:PropertyHandler
+            >jmca.owl2mas.handler.SelectionStrategyClassEntryHandler</mas:PropertyHandler>
+        <rdfs:range rdf:resource="#SelectionStrategyClassEntry"/>
+        <rdfs:subPropertyOf rdf:resource="&mas;userAgentObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dur.ac.uk/t.g.klapiscak/onts/owl2mas/mas.owl#userAgentObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="&mas;userAgentObjectProperty"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dur.ac.uk/t.g.klapiscak/onts/owl2mas/jmca.owl#hasPosition -->
+
+    <owl:DatatypeProperty rdf:about="#hasPosition">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="#SelectionStrategyClassEntry"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dur.ac.uk/t.g.klapiscak/onts/owl2mas/jmca.owl#Aspect -->
+
+    <owl:Class rdf:about="#Aspect">
+        <rdfs:subClassOf rdf:resource="#JMCAParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dur.ac.uk/t.g.klapiscak/onts/owl2mas/jmca.owl#JMCAParameter -->
+
+    <owl:Class rdf:about="#JMCAParameter">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dur.ac.uk/t.g.klapiscak/onts/owl2mas/jmca.owl#SelectionStrategyClass -->
+
+    <owl:Class rdf:about="#SelectionStrategyClass">
+        <rdfs:subClassOf rdf:resource="#JMCAParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dur.ac.uk/t.g.klapiscak/onts/owl2mas/jmca.owl#SelectionStrategyClassEntry -->
+
+    <owl:Class rdf:about="#SelectionStrategyClassEntry">
+        <rdfs:subClassOf rdf:resource="#JMCAParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dur.ac.uk/t.g.klapiscak/onts/owl2mas/jmca.owl#ActionExec -->
+
+    <Aspect rdf:about="#ActionExec"/>
+    
+
+
+    <!-- http://www.dur.ac.uk/t.g.klapiscak/onts/owl2mas/jmca.owl#Event -->
+
+    <Aspect rdf:about="#Event"/>
+    
+
+
+    <!-- http://www.dur.ac.uk/t.g.klapiscak/onts/owl2mas/jmca.owl#Intention -->
+
+    <Aspect rdf:about="#Intention"/>
+    
+
+
+    <!-- http://www.dur.ac.uk/t.g.klapiscak/onts/owl2mas/jmca.owl#Message -->
+
+    <Aspect rdf:about="#Message"/>
+    
+
+
+    <!-- http://www.dur.ac.uk/t.g.klapiscak/onts/owl2mas/jmca.owl#Option -->
+
+    <Aspect rdf:about="#Option"/>
+</rdf:RDF>

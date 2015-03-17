@@ -1,0 +1,80 @@
+/* .mas2j configuration of the commerce MAS
+ * Notes: 
+ *      -   this takes advantage of defaults for many of the settings available
+ *          for the configuration of a JASDL agent. Please consult docs/mas2jconfiguration
+ *          for full documentation of these.
+ *      -   in the interests of simplicitly, all agents make use of the same label mappings for ontologies
+ *          and (automatic and manual) alias mappings for ontological entities.
+ *          These could be set arbitrarily for each agent (and the .asl code updated accordingly) and JASDL would
+ *          still function correctly.
+ *      -   Each agent in the society must have associated with it an individual in society.owl (with a matching name) and
+ *          a ModelAgent instance in the CommerceModel (where its ID matches agent name).
+ *      -   Although ontology URIs reference related local resources on the file system, they could equally reference (reachable) remote or local
+ *          resources (e.g. http://www.dur.ac.uk/t.g.klapiscak/onts/commerce.owl). In fact, any valid URI can be used here.
+ *      -   Since we make extensive use of inverse object properties, we enable the experimental "contraction" feature to ensure their removals
+ *          are properly handled.
+ */
+
+MAS commerce {
+
+    infrastructure: Centralised
+
+    environment: commerce.env.CommerceEnvironment
+
+    agents:
+
+    
+        shop
+        [
+        jasdl_ontologies="c,s",
+        jasdl_c_uri="/onts/commerce.owl",
+        jasdl_s_uri="/onts/society.owl",
+        jasdl_useContraction = "true"
+        ]
+        #3
+        agentArchClass jasdl.architecture.JASDLAgArch
+        agentClass jasdl.asSemantics.JASDLAgent
+        beliefBaseClass jasdl.bb.JASDLBeliefBase; 
+        
+        delivery_van
+        [
+        jasdl_ontologies="c,s",
+        jasdl_c_uri="/onts/commerce.owl",
+        jasdl_s_uri="/onts/society.owl",
+        jasdl_useContraction = "true"
+        ]
+        #4
+        agentArchClass jasdl.architecture.JASDLAgArch
+        agentClass jasdl.asSemantics.JASDLAgent
+        beliefBaseClass jasdl.bb.JASDLBeliefBase; 
+        
+        customer
+        [
+        jasdl_ontologies="c,s",
+        jasdl_c_uri="/onts/commerce.owl",
+        jasdl_s_uri="/onts/society.owl",
+        jasdl_useContraction = "true"
+        ]
+        #3
+        agentArchClass jasdl.architecture.JASDLAgArch
+        agentClass jasdl.asSemantics.JASDLAgent
+        beliefBaseClass jasdl.bb.JASDLBeliefBase; 
+        
+        pa
+        [
+        jasdl_ontologies="c,s",
+        jasdl_c_uri="/onts/commerce.owl",
+        jasdl_s_uri="/onts/society.owl",        
+        jasdl_useContraction = "true"
+        ]
+        #3
+        agentArchClass jasdl.architecture.JASDLAgArch
+        agentClass jasdl.asSemantics.JASDLAgent
+        beliefBaseClass jasdl.bb.JASDLBeliefBase; 
+
+        
+        classpath:  "../../lib/**/*.jar";           // JASDL's libraries
+                    
+        aslSourcePath: "src/asl";
+}
+

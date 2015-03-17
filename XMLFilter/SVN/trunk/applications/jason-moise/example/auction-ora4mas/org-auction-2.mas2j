@@ -1,0 +1,22 @@
+/*
+
+The Jason auction example implemented with 
+Moise organisation and ORA4MAS platform.
+
+See readme.txt for more information.
+
+*/
+
+MAS auction {
+   environment: ora4mas.CartagoOrgEnvironment("ora4mas") // the argument is the workspace used by the agents to deploy organisational artifacts
+   
+   agents:
+
+       bob auctioneer  agentArchClass ora4mas.CartagoOrgAgent;
+       ag1             agentArchClass ora4mas.CartagoOrgAgent;
+       ag2             agentArchClass ora4mas.CartagoOrgAgent;
+       ag3             agentArchClass ora4mas.CartagoOrgAgent;
+
+   classpath: "../../lib/moise.jar";"../../lib/jmoise.jar";"../../lib/c4jason.jar";"../../lib/cartago.jar";
+   
+}

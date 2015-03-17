@@ -1,0 +1,15 @@
+MAS write_paper {
+   infrastructure: Centralised
+   agents:
+       orgManager [osfile="wp-os.xml",gui=yes] 
+                  agentArchClass jmoise.OrgManager;
+
+       jaime      agentArchClass jmoise.OrgAgent;
+       olivier    agentArchClass jmoise.OrgAgent;
+       jomi       agentArchClass jmoise.OrgAgent;
+
+   classpath: "../../lib/moise.jar";"../../lib/jmoise.jar";
+   
+   aslSourcePath: ".";"../../src/asl";
+}
+

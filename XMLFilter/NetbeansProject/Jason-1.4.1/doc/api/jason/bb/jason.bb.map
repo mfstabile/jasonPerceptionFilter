@@ -1,0 +1,18 @@
+<map id="G" name="G">
+<area shape="rect" id="node1_0" href="./TextPersistentBB.html" title="jason.bb.TextPersistentBB" alt="" coords="16,130,132,155"/>
+<area shape="rect" id="node1" href="./TextPersistentBB.html" title="&lt;TABLE&gt;" alt="" coords="5,119,143,167"/>
+<area shape="rect" id="node2_1" href="./JDBCPersistentBB.html" title="jason.bb.JDBCPersistentBB" alt="" coords="178,130,306,155"/>
+<area shape="rect" id="node2" href="./JDBCPersistentBB.html" title="&lt;TABLE&gt;" alt="" coords="167,119,317,167"/>
+<area shape="rect" id="node8_2" href="./AgentJDBCPersistentBB.html" title="jason.bb.AgentJDBCPersistentBB" alt="" coords="162,230,322,255"/>
+<area shape="rect" id="node8" href="./AgentJDBCPersistentBB.html" title="&lt;TABLE&gt;" alt="" coords="151,219,333,267"/>
+<area shape="rect" id="node3_3" href="./IndexedBB.html" title="jason.bb.IndexedBB" alt="" coords="351,130,434,155"/>
+<area shape="rect" id="node3" href="./IndexedBB.html" title="&lt;TABLE&gt;" alt="" coords="341,119,445,167"/>
+<area shape="rect" id="node4_4" href="./DefaultBeliefBase.html" title="jason.bb.DefaultBeliefBase" alt="" coords="578,230,698,255"/>
+<area shape="rect" id="node4" href="./DefaultBeliefBase.html" title="&lt;TABLE&gt;" alt="" coords="567,219,709,267"/>
+<area shape="rect" id="node5_5" href="./ChainBBAdapter.html" title="jason.bb.ChainBBAdapter" alt="" coords="396,17,512,42"/>
+<area shape="rect" id="node5" href="./ChainBBAdapter.html" title="&lt;TABLE&gt;" alt="" coords="385,5,523,53"/>
+<area shape="rect" id="node6_6" href="./ChainBB.html" title="jason.bb.ChainBB" alt="" coords="479,130,551,155"/>
+<area shape="rect" id="node6" href="./ChainBB.html" title="&lt;TABLE&gt;" alt="" coords="469,119,562,167"/>
+<area shape="rect" id="node7_7" href="./BeliefBase.html" title="jason.bb.BeliefBase" alt="" coords="597,121,679,164"/>
+<area shape="rect" id="node7" href="./BeliefBase.html" title="&lt;TABLE&gt;" alt="" coords="587,116,689,169"/>
+</map>

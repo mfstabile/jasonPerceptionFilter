@@ -1,0 +1,67 @@
+/* 
+ *  Copyright (C) 2008 Thomas Klapiscak (t.g.klapiscak@durham.ac.uk)
+ *  
+ *  This file is part of JMCA.
+ *
+ *  JMCA is free software: you can redistribute it and/or modify
+ *  it under the terms of the Lesser GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  JMCA is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  Lesser GNU General Public License for more details.
+ *
+ *  You should have received a copy of the Lesser GNU General Public License
+ *  along with JMCA.  If not, see <http://www.gnu.org/licenses/>.
+ *  
+ */
+ 
+/*
+ * A simple example demonstrating the use of JMCA (Jason Module Composition Architecture).
+ * This file demonstrates how a .mas2j file might be set up to make use of JMCA
+ 
+ * Here we compose two selection strategies that function as follows:
+ 
+ * AlphaOptionSelectionStrategy: Orders options in descending alphabetical order according to functor of the plan label predicate
+ * and chooses the first two.
+ * ElbppOptionSelectionStrategy: "Explicit Level-Based Plan Prioritisation". Orders options into levels according to X in "pl(X)" plan
+ * label annotation. All plans from the highest level are chosen.
+ 
+ * We are using the (default) OverrulingIntersection mediation strategy here. This means that the intersection of the chosen set of two
+ * adjacent selection stategies is taken. If this intersection is empty (i.e. there is no agreement between the two selection strategies) then
+ * the later selection strategy takes precence and passes on its entire chosen set.
+ 
+ * Please consult the AgentSpeak and Java code for more details 
+ */
+
+MAS mas {
+
+    infrastructure: Centralised
+
+    agents:
+           agent
+           agent.asl
+           [
+           /* JMCA Configuration */
+            // Our composition chain for the Option aspect as described above
+            jmca_Option_selection_strategies="alpha.selection.AlphaOptionSelectionStrategy, elbpp.selection.ElbppOptionSelectionStrategy",
+            // The mediation strategy we are using for the Option aspect. Defaults to this if omitted
+            jmca_Option_mediation_strategy="jmca.mediation.OverrulingIntersection"
+                
+            /* Here we show composition for the Option aspect only. Selection functions for other aspects (Event, Message, Intention, ActionExec)
+             * can be set here in a similar way. For example:
+             * jmca_Event_selection_strategies="somemodule.SomeEventModule"
+             * jmca_Event_mediation_strategy="somemodule.policy.SomePolicy" // <- notice we are using a non-default selection policy implementation here
+             */
+           ]
+           
+           // the agentClass must be set to this (or a derivative) to use JMCA
+           agentClass jmca.asSemantics.JmcaAgent       
+           #1;
+           
+           // include the necessary libraries
+           classpath:  "../../lib/jmca.jar"; "../../applications/elbpp/lib/elbpp.jar"; "../../applications/alpha/lib/alpha.jar";
+}
+

@@ -1,0 +1,83 @@
+<project basedir="." default="jar" name="owl2mas">
+
+        <property environment="env"/>
+
+    <property name="version" value="0"/>
+    <property name="release" value="0.1"/>
+    <property name="build.dir" value="${basedir}/bin" />
+
+    <property name="jar.file" value="${basedir}/lib/owl2mas.jar" />
+    <property name="dist.dir" value="${env.HOME}/tmp/owl2mas-${version}.${release}" />
+    <property name="dist.file" value="${env.HOME}/tmp/owl2mas-${version}.${release}" />
+
+    <property name="plugin.dir" value="${basedir}/plugin" />
+
+    <property name="plugin.jar" value="${plugin.dir}/owl2mas.protege.jar" />
+
+    <path id="project.classpath">
+        <pathelement location="../../lib/jason.jar"/>
+        <fileset dir="./lib">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="init">
+        <tstamp/>
+        <mkdir dir="${build.dir}"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <javac srcdir="src" destdir="${build.dir}" debug="true" deprecation="true" optimize="true" nowarn="true" source="1.5" target="1.5">
+            <classpath refid="project.classpath" />
+        </javac>
+    </target>
+
+    <target name="jar" depends="compile">
+        <jar destfile="${jar.file}" basedir="./bin" includes="**/*.class">
+            <!--
+            <manifest>
+                <attribute name="Main-Class" value="owl2mas.OWL2MAS"/>
+                <attribute name="Class-Path" value="commons.logging-1.1.jar:jason.jar:owlapi-bin.jar:pellet.jar:relaxngDatatype.jar:xsdlib.jar:owl2mas.jar"/>
+            </manifest> -->
+        </jar>
+        
+    </target>
+
+<target name="plugin" depends="compile">
+    <mkdir dir="${plugin.dir}"/>
+
+    <!-- hack to get plugin.xml where its needed -->
+    <copy file="${basedir}/plugin.xml" todir="${build.dir}" />
+
+    <jar destfile="${plugin.jar}" basedir="${build.dir}" includes="plugin.xml **/owl2mas/protege/*.class" manifest="manifest"/>
+    
+
+    <copy todir="${plugin.dir}">
+        <fileset dir="${basedir}/lib/">
+            <include name="**/*.jar" />
+        </fileset>
+    </copy>
+</target>
+
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete file="${jar.file}"/>
+        <delete dir="${plugin.dir}"/>
+    </target>
+
+    <target name="apidoc" depends="compile" >
+        <javadoc 
+            packagenames="owl2mas.*"
+            destdir="${basedir}/doc/api"
+            author="true"
+            version="true"
+            use="true"
+            windowtitle="OWL2MAS">
+            <classpath refid="project.classpath"/>
+            <sourcepath>
+                <pathelement path="${basedir}/src"/>
+            </sourcepath>
+        </javadoc>    
+    </target>
+</project>

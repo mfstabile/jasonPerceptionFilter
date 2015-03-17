@@ -1,0 +1,51 @@
+JMCA: "Jason Module Composition Architecture"
+Copyright (C) 2008 Thomas Klapiscak (t.g.klapiscak@durham.ac.uk)
+JMCA is distributed under the LGPL license (see COPYING and COPYING.LESSER)
+
+Certain extensibility mechanisms provided by Jason allow an agent
+designer to override the methods that implement the various selection
+functions of an agent. Conceivably, selection function implementations
+may be provided as libraries for general use. However, it becomes
+difficult for an agent designer who wishes to simultaneously make use
+of multiple such libraries whose implementations overlap, since they
+are forced to com- bine code in an ad-hoc fashion (presuming the
+library source code is available in the first place).
+
+JMCA offers a solution to this problem as an extension separate to
+Jason. JMCA permits multiple selection function implementations to
+interact in a well-defined manner. This is achieved by providing a
+framework under which an agent designer can encapsulate the
+implementation of a selection function within a selection
+strategy. Subsequently, an agent making use of JMCA (i.e. extending
+the jmca.asSemantics.JmcaAgent class) is capable of composing a chain
+of such selection strategies and specifying a mediation strategy to
+mediate between the choices they make, thus defining the overall
+behaviour produced by the composition chain and ultimately the choices
+made by the agent.
+
+A single (default) mediation strategy is provided by JMCA, namely
+OverrulingIntersection.
+
+Please see code / javadocs for more information.
+
+The following software is required to run this application:
+
+Java 1.5 (available at http://java.sun.com)
+Jason 1.2 (available at http://jason.sf.net)
+
+See ./applications/ for example selection strategy implementations:
+
+* elbpp: "Explicit Level-Based Plan Prioritisation". Orders options
+         into levels according to X in "pl(X)" plan label
+         annotation. All plans from the highest level are chosen.
+
+* alpha: Orders options in ascending alphabetical order according to
+         functor of the plan label predicate and chooses first two
+         from the head of the resulting list
+
+See ./examples/ for example usages of JMCA by a Jason agent
+
+* trivial: Simplistic composition of Alpha and Elbpp Option selection
+         strategies with the OverrulingIntersection mediation strategy.
+
+Thank you for your interest in JMCA!

@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+
+
+<project name   ="Moise+Jason"
+         basedir="."
+         default="jar">
+
+    <property environment="env"/>
+
+    <property name="version"         value="1"/>
+    <property name="release"         value="3.2a"/>
+    <property name="moiseDir"        value="${env.HOME}/Moise/svn-moise" />
+    <property name="distDir"         value="${env.HOME}/tmp/jmoise-${version}.${release}" />
+    <property name="distFile"        value="${env.HOME}/jason-moise-${version}.${release}" />
+    <property name="doc-src-dir"     value="${env.HOME}/programming/Moise-doc" />
+
+    <path id="project.classpath">
+        <pathelement location="src"/>
+        <pathelement location="../../lib/jason.jar"/>
+        <pathelement location="${basedir}/lib/moise.jar"/>
+        <pathelement location="${basedir}/lib/cartago.jar"/>
+        <pathelement location="${basedir}/lib/c4jason.jar"/>
+    </path>
+
+    <condition property="moisejar-nexist" value="yes">
+        <not>
+            <available file="${moiseDir}/lib/moise.jar" />
+        </not>
+    </condition>
+
+    <target name="copy-moise" unless="moisejar-nexist">
+        <copy toDir="${basedir}/lib" >
+            <fileset dir="${moiseDir}/lib" includes="moise.jar" />
+        </copy>
+    </target>
+
+    <target name="init" depends="copy-moise">
+        <mkdir dir="${basedir}/bin/classes" />
+    </target>
+    
+    <target name="compile" depends="init">
+        <javac srcdir="${basedir}/src" 
+               destdir="${basedir}/bin/classes" 
+               debug="true" 
+               optimize="true" 
+               source="1.5" target="1.5">
+            <classpath refid="project.classpath"/>
+        </javac>
+    </target>
+    
+    <target name="jar" depends="compile" >
+        <jar jarfile="${basedir}/lib/jmoise.jar" >
+            <fileset dir="${basedir}/bin/classes">
+             <include name="**/*.class"/>
+        </fileset>
+        </jar>
+    </target>
+
+    <target name="apidoc" depends="compile" >
+        <javadoc 
+           packagenames="jmoise.*"
+           destdir="${basedir}/doc/api"
+           author="true"
+           version="true"
+           use="true"
+           windowtitle="Jason-Moise+ Organisational Model">
+            <classpath refid="project.classpath" />
+            <sourcepath>
+                <pathelement path="${basedir}/src"/>
+                <pathelement path="${basedir}/../../src"/>
+            </sourcepath>
+
+        </javadoc>    
+    </target>
+
+    <target name="dist" description="Build distribution." depends="jar" >
+          <!-- depends="clean, jar, apidoc" -->
+
+          <echo message="Generating J-Moise+ ${version}.${release}" />
+          
+          <fixcrlf srcdir="${basedir}"  eol="crlf" includes="**/*.txt,**/*.bat"  />
+          <fixcrlf tab="remove" tablength="4" javafiles="true" includes="**/*.java,**/*.xml" srcdir="${basedir}/src" />
+          
+          <delete failonerror="no" includeEmptyDirs="true" >
+              <fileset dir="${distDir}" />
+          </delete>
+          
+          <mkdir dir="${distDir}" />
+          
+          <copy todir="${distDir}">
+            <fileset dir="${basedir}" includes="*.*" />
+            <fileset dir="${basedir}" includes="LICENSE" />
+            <fileset dir="${basedir}" includes="doc/api/**/*" />
+            <fileset dir="${basedir}" includes="lib/**/*" />
+            <fileset dir="${basedir}" includes="example/writePaper/**/*" />
+            <fileset dir="${basedir}" includes="example/write-paper-ora4mas/**/*" />
+            <fileset dir="${basedir}" includes="example/moise-tutorial/**/*" />
+            <fileset dir="${basedir}" includes="example/auction/**/*" excludes="**/nbproject/**,**/profile-build.xml"/>
+            <fileset dir="${basedir}" includes="src/**/*" />
+          </copy>
+
+          <copy todir="${distDir}/doc">
+            <fileset dir="${moiseDir}/doc" includes="publications/**/* ora4mas/**/*" />
+            <fileset dir="${moiseDir}/doc/tutorial" includes="tutorial.pdf" />
+          </copy>
+
+          <!--tar compression="gzip" destfile="${distFile}.tgz">
+              <tarfileset dir="${distDir}/.." mode="755" >
+                  <include name="jmoise*/**/*.sh"/>
+              </tarfileset>
+              <tarfileset dir="${distDir}/.."  >
+                 <include name="jmoise*/**/*"/>
+                 <exclude name="jmoise*/**/*.sh"/>
+              </tarfileset>
+          </tar-->
+          
+          <zip basedir="${distDir}/.." includes="jmoise*/**/*" zipfile="${distFile}.zip"/>
+          
+    </target>
+
+
+    <target name="clean" >
+        <delete dir="${basedir}/bin/classes"/>
+        <delete failonerror="no" includeEmptyDirs="true" verbose="true">
+            <fileset dir="${basedir}" includes="**/*.class"/>
+        </delete>
+        <delete failonerror="no" includeEmptyDirs="true" verbose="true">
+            <fileset dir="${basedir}/example" includes="**/classes/*" />
+            <fileset dir="${basedir}/example" includes="**/classes" />
+            <fileset dir="${basedir}/example" includes="**/*.class" />
+            <fileset dir="${basedir}/example" includes="**/bin/**" />
+            <fileset dir="${basedir}/example" includes="**/.stop___MAS" />
+        </delete>
+    </target>
+</project>
+
