@@ -1,5 +1,5 @@
 # Jason Perception Filter
-Master's project to create a mechanism for reducing the reasoning in the Jason language.
+Master's project to create a mechanism for reducing the reasoning time in the Jason language.
 
 This implementation extends Jason with a perception filter based on an XML file.
 To compile and run this Jason version, the files compile.sh and run8.sh are provided.
