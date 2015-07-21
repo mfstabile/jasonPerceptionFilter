@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<PerceptionFilter>
-	<filter>
-		<predicate>pos</predicate>
-		<parameter operator="e" id="0">t.*</parameter>
-	</filter>
-</PerceptionFilter>
