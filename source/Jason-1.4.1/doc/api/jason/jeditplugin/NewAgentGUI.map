@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node1_0" href="../infra/centralised/StartNewAgentGUI.html" title="jason.infra.centralised.StartNewAgentGUI" alt="" coords="172,11,312,53"/>
+<area shape="rect" id="node1" href="../infra/centralised/StartNewAgentGUI.html" title="&lt;TABLE&gt;" alt="" coords="161,5,323,59"/>
+<area shape="rect" id="node5_1" href="./NewAgentGUI.html" title="jason.jeditplugin.NewAgentGUI" alt="" coords="191,118,293,143"/>
+<area shape="rect" id="node5" href="./NewAgentGUI.html" title="&lt;TABLE&gt;" alt="" coords="180,107,304,155"/>
+<area shape="rect" id="node2_2" href="./NewProjectGUI.html" title="jason.jeditplugin.NewProjectGUI" alt="" coords="16,214,124,239"/>
+<area shape="rect" id="node2" href="./NewProjectGUI.html" title="&lt;TABLE&gt;" alt="" coords="5,203,135,251"/>
+<area shape="rect" id="node3_3" href="./NewInternalActionGUI.html" title="jason.jeditplugin.NewInternalActionGUI" alt="" coords="170,214,314,239"/>
+<area shape="rect" id="node3" href="./NewInternalActionGUI.html" title="&lt;TABLE&gt;" alt="" coords="159,203,325,251"/>
+<area shape="rect" id="node4_4" href="./NewEnvironmentGUI.html" title="jason.jeditplugin.NewEnvironmentGUI" alt="" coords="359,214,498,239"/>
+<area shape="rect" id="node4" href="./NewEnvironmentGUI.html" title="&lt;TABLE&gt;" alt="" coords="349,203,509,251"/>
+</map>
