@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node1_0" href="../infra/centralised/CentralisedRuntimeServices.html" title="jason.infra.centralised.CentralisedRuntimeServices" alt="" coords="16,112,192,155"/>
-<area shape="rect" id="node1" href="../infra/centralised/CentralisedRuntimeServices.html" title="&lt;TABLE&gt;" alt="" coords="5,107,203,160"/>
-<area shape="rect" id="node2_1" href="../infra/jade/JadeRuntimeServices.html" title="jason.infra.jade.JadeRuntimeServices" alt="" coords="237,112,379,155"/>
-<area shape="rect" id="node2" href="../infra/jade/JadeRuntimeServices.html" title="&lt;TABLE&gt;" alt="" coords="227,107,389,160"/>
-<area shape="rect" id="node3_2" href="./RuntimeServicesInfraTier.html" title="jason.runtime.RuntimeServicesInfraTier" alt="" coords="127,11,283,53"/>
-<area shape="rect" id="node3" href="./RuntimeServicesInfraTier.html" title="&lt;TABLE&gt;" alt="" coords="117,5,294,59"/>
-</map>

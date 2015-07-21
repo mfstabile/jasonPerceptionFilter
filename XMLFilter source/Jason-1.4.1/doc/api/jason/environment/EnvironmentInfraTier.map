@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node1_0" href="./EnvironmentInfraTier.html" title="jason.environment.EnvironmentInfraTier" alt="" coords="115,11,247,53"/>
-<area shape="rect" id="node1" href="./EnvironmentInfraTier.html" title="&lt;TABLE&gt;" alt="" coords="105,5,258,59"/>
-<area shape="rect" id="node2_1" href="../infra/centralised/CentralisedEnvironment.html" title="jason.infra.centralised.CentralisedEnvironment" alt="" coords="16,112,168,155"/>
-<area shape="rect" id="node2" href="../infra/centralised/CentralisedEnvironment.html" title="&lt;TABLE&gt;" alt="" coords="5,107,179,160"/>
-<area shape="rect" id="node3_2" href="../infra/jade/JadeEnvironment.html" title="jason.infra.jade.JadeEnvironment" alt="" coords="214,112,330,155"/>
-<area shape="rect" id="node3" href="../infra/jade/JadeEnvironment.html" title="&lt;TABLE&gt;" alt="" coords="203,107,341,160"/>
-</map>

@@ -1,1 +1,0 @@
-bash bin/jason.sh

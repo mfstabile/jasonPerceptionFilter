@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node1_0" href="./CentralisedMASLauncherAnt.html" title="jason.infra.centralised.CentralisedMASLauncherAnt" alt="" coords="16,135,199,161"/>
-<area shape="rect" id="node1" href="./CentralisedMASLauncherAnt.html" title="&lt;TABLE&gt;" alt="" coords="5,124,209,172"/>
-<area shape="rect" id="node2_1" href="../jade/JadeMASLauncherAnt.html" title="jason.infra.jade.JadeMASLauncherAnt" alt="" coords="103,225,251,268"/>
-<area shape="rect" id="node2" href="../jade/JadeMASLauncherAnt.html" title="&lt;TABLE&gt;" alt="" coords="92,220,261,273"/>
-<area shape="rect" id="node3_2" href="../../jeditplugin/MASLauncherInfraTier.html" title="jason.jeditplugin.MASLauncherInfraTier" alt="" coords="105,11,249,71"/>
-<area shape="rect" id="node3" href="../../jeditplugin/MASLauncherInfraTier.html" title="&lt;TABLE&gt;" alt="" coords="94,5,259,76"/>
-</map>
