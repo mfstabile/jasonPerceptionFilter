@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<PerceptionFilter>
+	<filter>
+		<predicate>pos</predicate>
+		<anotation>
+			<name>distance</name>
+			<limit operator="GT">2</limit>
+		</anotation>
+	</filter>
+</PerceptionFilter>

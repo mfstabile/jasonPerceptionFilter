@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<PerceptionFilter>
+	<filter>
+		<predicate>pos</predicate>
+		<parameter operator="EQ" id="0">t.*</parameter>
+	</filter>
+	<filter>
+		<predicate>garbage</predicate>
+	</filter>
+</PerceptionFilter>
