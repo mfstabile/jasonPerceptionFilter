@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node1_0" href="./MindInspectorWeb.html" title="jason.architecture.MindInspectorWeb" alt="" coords="16,19,141,45"/>
+<area shape="rect" id="node1" href="./MindInspectorWeb.html" title="&lt;TABLE&gt;" alt="" coords="5,8,152,56"/>
+<area shape="rect" id="node2_1" href="./MindInspectorAgArch.html" title="jason.architecture.MindInspectorAgArch" alt="" coords="169,214,308,239"/>
+<area shape="rect" id="node2" href="./MindInspectorAgArch.html" title="&lt;TABLE&gt;" alt="" coords="159,203,319,251"/>
+<area shape="rect" id="node3_2" href="./AgArchInfraTier.html" title="jason.architecture.AgArchInfraTier" alt="" coords="187,11,291,53"/>
+<area shape="rect" id="node3" href="./AgArchInfraTier.html" title="&lt;TABLE&gt;" alt="" coords="176,5,301,59"/>
+<area shape="rect" id="node4_3" href="./AgArch.html" title="jason.architecture.AgArch" alt="" coords="209,118,269,143"/>
+<area shape="rect" id="node4" href="./AgArch.html" title="&lt;TABLE&gt;" alt="" coords="198,107,279,155"/>
+</map>

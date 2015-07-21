@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node1_0" href="./RunProjectListener.html" title="jason.jeditplugin.RunProjectListener" alt="" coords="16,19,140,62"/>
+<area shape="rect" id="node1" href="./RunProjectListener.html" title="&lt;TABLE&gt;" alt="" coords="5,14,151,67"/>
+<area shape="rect" id="node2_1" href="./JasonID.html" title="jason.jeditplugin.JasonID" alt="" coords="196,135,264,161"/>
+<area shape="rect" id="node2" href="./JasonID.html" title="&lt;TABLE&gt;" alt="" coords="185,124,275,172"/>
+<area shape="rect" id="node3_2" href="http://java.sun.com/j2se/1.4.2/docs/api/javax/swing/JPanel.html" title="javax.swing.JPanel" alt="" coords="185,19,275,62"/>
+<area shape="rect" id="node3" href="http://java.sun.com/j2se/1.4.2/docs/api/javax/swing/JPanel.html" title="&lt;TABLE&gt;" alt="" coords="175,14,285,67"/>
+<area shape="rect" id="node4_3" href="http://java.sun.com/j2se/1.4.2/docs/api/org/gjt/sp/jedit/EBComponent.html" title="org.gjt.sp.jedit.EBComponent" alt="" coords="321,11,425,71"/>
+<area shape="rect" id="node4" href="http://java.sun.com/j2se/1.4.2/docs/api/org/gjt/sp/jedit/EBComponent.html" title="&lt;TABLE&gt;" alt="" coords="310,5,435,76"/>
+</map>
